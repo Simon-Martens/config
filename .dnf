@@ -23,6 +23,7 @@ kernel-modules-extra-6.8.2-300.fc40.x86_64
 langpacks-en-4.0-12.fc40.noarch
 livesys-scripts-0.6.0-3.fc40.noarch
 make-1:4.4.1-6.fc40.x86_64
+neovim-0.9.5-4.fc40.x86_64
 ninja-build-1.11.1-7.fc40.x86_64
 pamixer-1.6-3.fc40.x86_64
 ripgrep-14.1.0-2.fc40.x86_64
