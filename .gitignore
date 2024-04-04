@@ -1,4 +1,6 @@
 /*
+/.config/*
+
 !.bashrc
 !.bash_aliases
 !.dnf
@@ -14,6 +16,7 @@
 !.zsh_plugins
 !.zsh_themes
 
+!.config/
 !.config/alacritty/
 !.config/i3/
 !.config/i3blocks/
