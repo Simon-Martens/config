@@ -90,6 +90,9 @@ P.S. You can delete this when you're done too. It's your config now! :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Dont use the tab key for copilot suggestions
+vim.g.copilot_no_tab_map = true
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
@@ -186,6 +189,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
+
 --
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
@@ -281,7 +285,15 @@ require('lazy').setup {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- Github Copilot
-  { 'github/copilot.vim' },
+  -- This is a plugin that provides AI-powered code suggestions
+  {
+    'github/copilot.vim',
+    name = 'copilot',
+    config = function()
+      -- Use Option + Enter to accept GitHub Copilot suggestions
+      vim.api.nvim_set_keymap('i', '<C-U>', 'copilot#Accept("<CR>")', { expr = true, noremap = false, silent = true })
+    end,
+  },
 
   -- Fugitive
   -- This is a Git wrapper for Neovim. It's a great way to interact with git
@@ -1028,8 +1040,3 @@ require('lazy').setup {
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   -- { import = 'custom.plugins' },
 }
-
--- Use Option + Enter to accept GitHub Copilot suggestions
--- C-CR did not work
-vim.api.nvim_set_keymap('i', '<M-CR>', 'copilot#Accept("<CR>")', { expr = true, noremap = true, silent = true })
-vim.g.copilot_no_tab_map = true

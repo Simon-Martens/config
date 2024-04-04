@@ -3,4 +3,11 @@ go
 nvm
 dstask
 google chrome
-outlook + teams added via chrome
+outlook + teams + yt music added via chrome
+discord (via fusion-nonfree repository)
+hyprland (+ tools in different repo)
+
+
+ERASE:
+dnf erase PackageKit-command-not-found
+
