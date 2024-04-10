@@ -215,7 +215,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
--- Move to previous/next
+-- Move to previous/next / Barbar / Tabs
 map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
 map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
 -- Re-order to previous/next
@@ -232,10 +232,12 @@ map('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', opts)
 map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', opts)
 map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts)
 map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
--- Pin/unpin buffer
-map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
+-- unpin buffer
+map('n', '<A-p>', '<Cmd>BufferPick<CR>', opts)
 -- Close buffer
 map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+map('n', '<A-S-c>', '<Cmd>BufferClose!<CR>', opts)
+
 -- Wipeout buffer
 --                 :BufferWipeout
 -- Close commands
@@ -244,8 +246,6 @@ map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 --                 :BufferCloseAllButCurrentOrPinned
 --                 :BufferCloseBuffersLeft
 --                 :BufferCloseBuffersRight
--- Magic buffer-picking mode
-map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -967,7 +967,7 @@ require('lazy').setup {
   -- Multi selection
   'mg979/vim-visual-multi',
 
-  -- Tab line:
+  -- Tabs / Tab line:
   {
     'romgrk/barbar.nvim',
     dependencies = {
@@ -988,7 +988,10 @@ require('lazy').setup {
         animation = false,
         auto_hide = 1,
         icons = {
-          preset = 'slanted',
+          filetype = {
+            enabled = false,
+          },
+          preset = 'default',
         },
       }
     end,
