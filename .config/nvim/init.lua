@@ -692,9 +692,11 @@ require('lazy').setup {
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
+        gohtmltmpl = { { 'prettierd', 'prettier' } },
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
-        -- javascript = { { "prettierd", "prettier" } },
+        javascript = { { 'prettierd', 'prettier' } },
+        css = { { 'prettierd', 'prettier' } },
       },
     },
   },
