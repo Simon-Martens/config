@@ -979,7 +979,7 @@ require('lazy').setup {
   {
     'fatih/vim-go',
   },
-  -- Noice is a plugin to get a command box like v*code has
+  --   Noice is a plugin to get a command box like v*code has
   -- {
   --   'folke/noice.nvim',
   --   event = 'VeryLazy',
