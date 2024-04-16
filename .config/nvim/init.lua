@@ -232,7 +232,7 @@ require('lazy').setup {
     'github/copilot.vim',
     name = 'copilot',
     config = function()
-      -- Use Option + Enter to accept GitHub Copilot suggestions
+      -- Use Ctrl + u to accept GitHub Copilot suggestions
       vim.api.nvim_set_keymap('i', '<C-U>', 'copilot#Accept("<CR>")', { expr = true, noremap = false, silent = true })
     end,
   },
@@ -589,7 +589,22 @@ require('lazy').setup {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
-
+        cssls = {
+          settings = {
+            css = {
+              validate = true,
+              lint = {
+                unknownAtRules = 'ignore',
+              },
+            },
+            less = {
+              validate = true,
+            },
+            scss = {
+              validate = true,
+            },
+          },
+        },
         lua_ls = {
           -- cmd = {...},
           -- filetypes { ...},
@@ -774,10 +789,27 @@ require('lazy').setup {
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       -- Load the colorscheme here
-      vim.cmd.colorscheme 'tokyonight-night'
+      -- vim.cmd.colorscheme 'tokyonight-night'
 
       -- You can configure highlights by doing something like
       vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+
+  { -- You can easily change to a different colorscheme.
+    -- Change the name of the colorscheme plugin below, and then
+    -- change the command in the config to whatever the name of that colorscheme is
+    --
+    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`
+    'rose-pine/neovim',
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      -- Load the colorscheme here
+      vim.cmd.colorscheme 'rose-pine'
+      require('rose-pine').setup {
+        variant = 'dawn',
+      }
     end,
   },
 
