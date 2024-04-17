@@ -71,34 +71,6 @@ git clone https://github.com/nvim-lua/kickstart.nvim.git $env:USERPROFILE\AppDat
 
 </details>
 
-### Post Installation
-
-Start Neovim
-
-```sh
-nvim
-```
-
-That's it! Lazy will install all the plugins you have. Use `:Lazy` to view
-current plugin status.
-
-Read through the `init.lua` file in your configuration folder for more
-information about extending and exploring Neovim.
-
-### Getting Started
-
-See [Effective Neovim: Instant IDE](https://youtu.be/stqUbv-5u2s), covering the
-previous version. Note: The install via init.lua is outdated, please follow the
-install instructions in this file instead. An updated video is coming soon.
-
-### Recommended Steps
-
-[Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repo
-(so that you have your own copy that you can modify) and then installing you
-can install to your machine using the methods above.
-
-> **NOTE**  
-> Your fork's url will be something like this: `https://github.com/<your_github_username>/kickstart.nvim.git`
 
 #### Examples of adding popularly requested plugins
 
