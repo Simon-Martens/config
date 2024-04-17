@@ -158,6 +158,11 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Keybinds to make tab scopes easier
+vim.keymap.set('n', 'gT', '<cmd>tabprevious<CR>', { desc = '[G]oto previous [T]ab' })
+vim.keymap.set('n', 'gt', '<cmd>tabnext<CR>', { desc = '[G]oto to next [t]ab' })
+vim.keymap.set('n', '<Leader>t', '<cmd>tabnew<CR>', { desc = 'Open a new tab' })
+
 -- Further plugin dependent keybinds
 -- See bbye for closing buffer keymaps <Leader>q <Leader>Q
 -- See treesitter for semantic keymaps in v-mode vaf vif etc

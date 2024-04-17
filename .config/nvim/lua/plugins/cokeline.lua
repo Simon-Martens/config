@@ -8,6 +8,8 @@ return {
   config = function()
     local get_hex = require('cokeline.hlgroups').get_hl_attr
     require('cokeline').setup {
+      show_if_buffers_are_at_least = 1,
+
       default_hl = {
         fg = function(buffer)
           return buffer.is_focused and get_hex('ColorColumn', 'bg') or get_hex('Normal', 'fg')
@@ -43,6 +45,23 @@ return {
         },
         {
           text = ' ',
+        },
+      },
+
+      tabs = {
+        placement = 'right',
+        components = {
+          {
+            text = function(tab)
+              return ' ' .. tab.number .. ' '
+            end,
+            fg = function(tab)
+              return tab.is_active and get_hex('Normal', 'fg') or get_hex('Comment', 'fg')
+            end,
+            bold = function(tab)
+              return tab.is_active
+            end,
+          },
         },
       },
     }
