@@ -93,7 +93,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 20
 
 -- Tab size
 vim.opt.tabstop = 2
@@ -108,6 +108,9 @@ vim.opt.relativenumber = true
 
 -- Disable folding, we don't need it
 vim.opt.fen = false
+
+vim.opt.textwidth = 100
+vim.opt.colorcolumn = '+0'
 
 -- [[ Basic Keymaps ]]
 -------------------------------------------------------------------------------------------------------
@@ -155,42 +158,17 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- Working with buffers
-
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-
--- Move to previous/next / Barbar / Tabs
-map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
-map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
--- Re-order to previous/next
-map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
-map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
--- Goto buffer in position... // We dont really need this
-map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
-map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts)
-map('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', opts)
-map('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', opts)
-map('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', opts)
-map('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', opts)
-map('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', opts)
-map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', opts)
-map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts)
-map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
--- unpin buffer
-map('n', '<A-p>', '<Cmd>BufferPick<CR>', opts)
--- Close buffer
-map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
-map('n', '<A-S-c>', '<Cmd>BufferClose!<CR>', opts)
-
--- Wipeout buffer
---                 :BufferWipeout
--- Close commands
---                 :BufferCloseAllButCurrent
---                 :BufferCloseAllButPinned
---                 :BufferCloseAllButCurrentOrPinned
---                 :BufferCloseBuffersLeft
---                 :BufferCloseBuffersRight
+-- Further plugin dependent keybinds
+-- See bbye for closing buffer keymaps <Leader>q <Leader>Q
+-- See treesitter for semantic keymaps in v-mode vaf vif etc
+-- See telescope for fuzzy finding keymaps <Leader>s
+-- See cokeline for tab switching keymaps <Tab><S-Tab>
+-- See comment for gc keymap gc
+-- See lspconfig for various LSP keymaps
+-- See multiselect for C-n
+-- See mini for jumping with f / F / t / T and suraunding selection in v-mode va{ va( vi( etc
+-- See copilot for C-u
+-- See which-key for <Leader> <LocalLeader> <Leader>h <Leader>l
 
 -- [[ Basic Autocommands ]]
 -----------------------------------------------------------------------------------------------
