@@ -13,8 +13,6 @@ return {
         'treesitter',
         'syntax',
         'matchparen',
-        'vimopts',
-        'filetype',
       },
     }
   end,

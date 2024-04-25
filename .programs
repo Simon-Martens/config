@@ -6,7 +6,7 @@ google chrome
 outlook + teams + yt music added via chrome
 discord (via fusion-nonfree repository)
 hyprland (+ tools in different repo)
-
+libavcodec-freeworld
 
 ERASE:
 dnf erase PackageKit-command-not-found

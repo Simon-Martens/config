@@ -110,7 +110,6 @@ vim.opt.relativenumber = true
 vim.opt.fen = false
 
 vim.opt.textwidth = 100
-vim.opt.colorcolumn = '+0'
 
 -- [[ Basic Keymaps ]]
 -------------------------------------------------------------------------------------------------------
@@ -220,7 +219,6 @@ require('lazy').setup {
       vim.cmd.hi 'Comment gui=none'
     end,
   },
-
 
   {
     'rose-pine/neovim',
