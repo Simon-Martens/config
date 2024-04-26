@@ -215,7 +215,6 @@ return {
       'prettier',
       'tailwindcss',
       'typescript-language-server',
-      'xmlformatter',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
