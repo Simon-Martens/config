@@ -1,6 +1,6 @@
 /*
 /.config/*
-/.config/Code/*
+/.config/Code/User/*
 
 !.bash_env
 !.bashrc
@@ -21,7 +21,7 @@
 !.setup.sh 
 
 !.config/
-!.config/Code/User/
+!.config/Code/User/settings.json
 !.config/alacritty/
 !.config/i3/
 !.config/i3blocks/
