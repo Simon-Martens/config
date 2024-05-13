@@ -215,6 +215,7 @@ return {
       'prettier',
       'tailwindcss',
       'typescript-language-server',
+      'lemminx',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
