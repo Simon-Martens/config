@@ -18,6 +18,7 @@
 !.zsh_themes
 !.tilix.dconf
 !.setup.sh 
+!.apt
 
 !.config/
 !.config/alacritty/
