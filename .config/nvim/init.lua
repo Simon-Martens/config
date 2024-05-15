@@ -300,3 +300,13 @@ require('lazy').setup {
   ----------------------------------------------------------------------------------------------
   { import = 'plugins' },
 }
+
+-- Setup SQL completions
+-- Setup up vim-dadbod
+local cmp = require 'cmp'
+cmp.setup.filetype({ 'sql' }, {
+  sources = {
+    { name = 'vim-dadbod-completion' },
+    { name = 'buffer' },
+  },
+})
