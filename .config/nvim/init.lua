@@ -111,12 +111,17 @@ vim.opt.fen = false
 
 vim.opt.textwidth = 100
 
+-- Set highlight on search,
+vim.opt.hlsearch = true
+
+-- sql query saving for dadbod
+vim.g.db_ui_save_location = vim.fn.getcwd() .. '.queries/'
+
 -- [[ Basic Keymaps ]]
 -------------------------------------------------------------------------------------------------------
 --  See `:help vim.keymap.set()`
 
--- Set highlight on search, but clear on pressing <Esc> in normal mode
-vim.opt.hlsearch = true
+-- Clear highlight on pressing <Esc> in normal mode:
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Vertically jump around half a page and always center the cursor
@@ -310,3 +315,6 @@ cmp.setup.filetype({ 'sql' }, {
     { name = 'buffer' },
   },
 })
+
+-- sql query saving for dadbod
+vim.g.db_ui_save_location = vim.fn.getcwd() .. '/.queries/'
