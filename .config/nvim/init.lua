@@ -317,4 +317,4 @@ cmp.setup.filetype({ 'sql' }, {
 })
 
 -- sql query saving for dadbod
-vim.g.db_ui_save_location = vim.fn.getcwd() .. '/.queries/'
+vim.g.db_ui_save_location = vim.fn.getcwd() .. '/queries/'
