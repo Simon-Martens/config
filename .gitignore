@@ -29,5 +29,6 @@
 !.config/nvim/
 !.config/hypr/
 !.config/waybar/
+!.config/zellij/
 !.fonts/
 
