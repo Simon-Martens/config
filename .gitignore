@@ -19,6 +19,7 @@
 !.zsh_themes
 !.tilix.dconf
 !.setup.sh 
+!.apt
 
 !.config/
 !.config/Code/User/settings.json
@@ -30,6 +31,7 @@
 !.config/nvim/
 !.config/hypr/
 !.config/waybar/
+!.config/zellij/
 !.fonts/
 
 
