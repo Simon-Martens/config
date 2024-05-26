@@ -37,7 +37,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
 
-alias ls='ls -alh --color=auto'
+alias ll='ls -salh --color=auto'
 alias e='nvim'
 alias vim='nvim'
 alias v='nvim'
