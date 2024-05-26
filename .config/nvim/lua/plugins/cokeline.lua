@@ -72,8 +72,6 @@ return {
     -- Move to previous/next / Buffer / Tabs
     map('n', '<S-Tab>', '<Plug>(cokeline-focus-prev)', { silent = true })
     map('n', '<Tab>', '<Plug>(cokeline-focus-next)', { silent = true })
-    map('n', '<Leader><Tab>', '<Plug>(cokeline-focus-next)', { silent = true })
-    map('n', '<Leader><S-Tab>', '<Plug>(cokeline-focus-prev)', { silent = true })
 
     -- Goto buffer in position... // We dont really need this
     for i = 1, 9 do

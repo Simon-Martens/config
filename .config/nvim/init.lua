@@ -164,6 +164,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- Keybinds to make tab scopes easier
 vim.keymap.set('n', 'gT', '<cmd>tabprevious<CR>', { desc = '[G]oto previous [T]ab' })
+vim.keymap.set('n', '<Leader><S-Tab>', '<cmd>tabprevious<CR>', { desc = '[G]oto previous [T]ab' })
+vim.keymap.set('n', '<Leader><Tab>', '<cmd>tabnext<CR>', { desc = '[G]oto previous [T]ab' })
 vim.keymap.set('n', 'gt', '<cmd>tabnext<CR>', { desc = '[G]oto to next [t]ab' })
 vim.keymap.set('n', '<Leader>t', '<cmd>tabnew<CR>', { desc = 'Open a new tab' })
 
