@@ -171,7 +171,7 @@ decorations_theme_variant = "None"
 decorations = "Full"
 opacity = 1.00
 blur = true 
-
+dynamic_padding = true
 
 # SCROLLING
 # This section documents the [scrolling] table of the configuration file.
