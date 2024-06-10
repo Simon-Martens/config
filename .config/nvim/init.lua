@@ -109,7 +109,7 @@ vim.opt.relativenumber = true
 -- Disable folding, we don't need it
 vim.opt.fen = false
 
-vim.opt.textwidth = 100
+-- vim.opt.textwidth = 100
 
 -- Set highlight on search,
 vim.opt.hlsearch = true

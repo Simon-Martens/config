@@ -489,9 +489,6 @@ thickness = 0.15
 # { mouse = "Right", mods = "Control", action = "Paste" },
 # ]
 
-[mouse]
-hide_when_typing = true
-
 [hints]
 # HINTS
 # This section documents the [hints] table of the configuration file.
