@@ -1,6 +1,6 @@
 /*
-/.config/*
-/.config/Code/User/*
+.config/*
+.config/Code/User/*
 
 !.bash_env
 !.bashrc
@@ -34,4 +34,4 @@
 !.config/zellij/
 !.fonts/
 
-
+.config/alacritty/local.toml
