@@ -22,6 +22,7 @@
 !.apt
 
 !.config/
+!.config/kitty/
 !.config/Code/User/settings.json
 !.config/alacritty/
 !.config/i3/
