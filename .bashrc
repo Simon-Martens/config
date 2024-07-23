@@ -37,7 +37,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
 
-alias ll='ls -salh --color=auto --hyperlink-auto'
+alias ll='ls -salh --color=auto --hyperlink=auto'
 alias e='nvim'
 alias vim='nvim'
 alias v='nvim'
@@ -108,7 +108,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -salh --color=auto --hyperlink-auto'
+    alias ls='ls -salh --color=auto --hyperlink=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
