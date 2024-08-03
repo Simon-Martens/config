@@ -36,3 +36,4 @@
 !.fonts/
 
 .config/alacritty/local.toml
+*/**/.uuid
