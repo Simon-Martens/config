@@ -117,3 +117,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 . "$HOME/.cargo/env"
+
+
+
+# Check if ImageMagick is installed
+if command -v kitten &> /dev/null
+then
+    alias ssh="kitten ssh"
+fi
