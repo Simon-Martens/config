@@ -33,9 +33,6 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/simon/go/bin
 export PATH=$PATH:/home/simon/.dotnet
 
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
 
 alias ll='ls -salh --color=auto --hyperlink=auto'
 alias e='nvim'
