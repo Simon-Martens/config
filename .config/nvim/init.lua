@@ -133,8 +133,12 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>gM', vim.diagnostic.goto_prev, { desc = 'Go to previous Diagnostic [m]essage' })
-vim.keymap.set('n', '<leader>gm', vim.diagnostic.goto_next, { desc = 'Go to next Diagnostic [m]essage' })
+vim.keymap.set('n', '<leader>gM', function()
+  vim.diagnostic.jump { count = -1 }
+end, { desc = 'Go to previous Diagnostic [m]essage' })
+vim.keymap.set('n', '<leader>gm', function()
+  vim.diagnostic.jump { count = 1 }
+end, { desc = 'Go to next Diagnostic [m]essage' })
 vim.keymap.set('n', '<leader>m', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -195,6 +199,29 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function()
     vim.highlight.on_yank()
+  end,
+})
+
+-- autocommand to see diagnostic message when hovering over error
+vim.api.nvim_create_autocmd({ 'CursorHold' }, {
+  pattern = '*',
+  callback = function()
+    for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
+      if vim.api.nvim_win_get_config(winid).zindex then
+        return
+      end
+    end
+    vim.diagnostic.open_float {
+      scope = 'cursor',
+      focusable = false,
+      close_events = {
+        'CursorMoved',
+        'CursorMovedI',
+        'BufHidden',
+        'InsertCharPre',
+        'WinLeave',
+      },
+    }
   end,
 })
 
