@@ -5,6 +5,19 @@ export BASH_ENV="~/.bash_env"
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
+# RUN ZELLIJ if available
+if command -v zellij &> /dev/null && [[ -z "$ZELLIJ" ]]; then
+    if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+        zellij attach -c
+    else
+        zellij
+    fi
+
+    if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+        exit
+    fi
+fi
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
@@ -115,10 +128,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 . "$HOME/.cargo/env"
 
-
-
-# Check if ImageMagick is installed
-if command -v kitten &> /dev/null
-then
+# Check if kitty is running; set the ssh command accordingly
+if [ -n "$KITTY_WINDOW_ID" ]; then
     alias ssh="kitten ssh"
 fi
