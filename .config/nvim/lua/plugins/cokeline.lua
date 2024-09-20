@@ -7,6 +7,12 @@ return {
   },
   config = function()
     local get_hex = require('cokeline.hlgroups').get_hl_attr
+    local is_picking_focus = require('cokeline.mappings').is_picking_focus
+    local is_picking_close = require('cokeline.mappings').is_picking_close
+
+    local red = vim.g.terminal_color_1
+    local yellow = vim.g.terminal_color_3
+
     require('cokeline').setup {
       show_if_buffers_are_at_least = 1,
 
@@ -21,11 +27,20 @@ return {
 
       components = {
         {
+          text = ' ',
+        },
+        {
           text = function(buffer)
-            return ' ' .. buffer.devicon.icon
+            return (is_picking_focus() or is_picking_close()) and buffer.pick_letter .. ' ' or buffer.devicon.icon
           end,
           fg = function(buffer)
-            return buffer.devicon.color
+            return (is_picking_focus() and yellow) or (is_picking_close() and red) or buffer.devicon.color
+          end,
+          italic = function()
+            return (is_picking_focus() or is_picking_close())
+          end,
+          bold = function()
+            return (is_picking_focus() or is_picking_close())
           end,
         },
         {
@@ -38,6 +53,9 @@ return {
         {
           text = function(buffer)
             return buffer.filename .. ' '
+          end,
+          bold = function(buffer)
+            return buffer.is_focused
           end,
           underline = function(buffer)
             return buffer.is_hovered and not buffer.is_focused
@@ -72,5 +90,6 @@ return {
     -- Move to previous/next / Buffer / Tabs
     map('n', '<S-Tab>', '<Plug>(cokeline-focus-prev)', { silent = true })
     map('n', '<Tab>', '<Plug>(cokeline-focus-next)', { silent = true })
+    map('n', ',', '<Plug>(cokeline-pick-focus)', { silent = true })
   end,
 }

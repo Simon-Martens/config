@@ -97,6 +97,7 @@ vim.opt.scrolloff = 20
 
 -- Tab size
 vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 
 -- Don't expand tabs into spaces
 vim.opt.expandtab = false

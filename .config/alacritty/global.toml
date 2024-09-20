@@ -164,13 +164,14 @@ live_config_reload = true
 # opacity = 0.9
 
 [window]
-startup_mode = "Windowed"
+startup_mode = "Maximized"
 title = "Alacritty"
 dynamic_title = true 
 decorations_theme_variant = "None"
 decorations = "Full"
 opacity = 1.00
 blur = true 
+#padding = { x = 10, y = 8 }
 dynamic_padding = true
 
 # SCROLLING
@@ -239,6 +240,9 @@ builtin_box_drawing = true
 # This section documents the [colors.primary] table of the configuration file.
 
 [colors]
+[colors.primary]
+background = "#070707"
+
 #foreground = "#d8d8d8"
 #background = "#181818"
 #dim_foreground = "#828482"
