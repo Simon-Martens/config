@@ -9,7 +9,7 @@
 #
 sudo apt update
 sudo apt upgrade -y
-sudo apt install curl wget wl-clipboard ninja-build gettext cmake unzip build-essential xsel alacritty git vlc gnome-shell-extension-manager -y
+sudo apt install curl wget wl-clipboard ninja-build gettext cmake unzip build-essential xsel alacritty git vlc gnome-shell-extension-manager ripgrep -y
 
 # Build neovim
 mkdir source
