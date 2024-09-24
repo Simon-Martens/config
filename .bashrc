@@ -40,7 +40,7 @@ fi
 unset rc
 
 # RUN ZELLIJ if available
-if command -v zellij &> /dev/null && [[ -z "$ZELLIJ" ]]; then
+if command -v zellij &> /dev/null && [[ -z "$ZELLIJ" ]] && [[ $- == *i* ]]; then
     if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
         zellij attach -c
     else

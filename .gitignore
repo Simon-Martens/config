@@ -20,6 +20,7 @@
 !.tilix.dconf
 !.setup.sh 
 !.apt
+!install.sh
 
 !.config/
 !.config/kitty/

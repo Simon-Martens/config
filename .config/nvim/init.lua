@@ -263,7 +263,7 @@ require('lazy').setup {
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       -- Load the colorscheme here
-      --      vim.cmd.colorscheme 'rose-pine'
+      vim.cmd.colorscheme 'rose-pine-main'
     end,
   },
 
@@ -272,7 +272,7 @@ require('lazy').setup {
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'nightfly'
+      -- vim.cmd.colorscheme 'nightfly'
     end,
   },
 
