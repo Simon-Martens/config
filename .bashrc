@@ -1,9 +1,43 @@
 # .bashrc
 # .bash_env is sourced if the command requires a non-interactive shell
 export BASH_ENV="~/.bash_env"
-
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# SETUP PATH 
+
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+if [ -d "$HOME/.cargo" ]; then
+    . "$HOME/.cargo/env"
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/simon/go/bin
+export PATH=$PATH:/home/simon/.dotnet
+
+# USER SCRIPTS
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
 
 # RUN ZELLIJ if available
 if command -v zellij &> /dev/null && [[ -z "$ZELLIJ" ]]; then
@@ -17,35 +51,6 @@ if command -v zellij &> /dev/null && [[ -z "$ZELLIJ" ]]; then
         exit
     fi
 fi
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
-fi
-
-# User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
-fi
-export PATH
-
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
-if [ -d ~/.bashrc.d ]; then
-    for rc in ~/.bashrc.d/*; do
-        if [ -f "$rc" ]; then
-            . "$rc"
-        fi
-    done
-fi
-unset rc
-
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/home/simon/go/bin
-export PATH=$PATH:/home/simon/.dotnet
-
 
 alias ll='ls -salh --color=auto --hyperlink=auto'
 alias e='nvim'
@@ -129,7 +134,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-. "$HOME/.cargo/env"
 
 # Check if kitty is running; set the ssh command accordingly
 if [ -n "$KITTY_WINDOW_ID" ]; then
