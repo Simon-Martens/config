@@ -228,7 +228,7 @@ multiplier = 3
 # Default: true
 
 [font]
-normal = { family = "Hack Nerd Font Mono", style = "Regular" }
+normal = { family = "CaskaydiaMono Nerd Font Mono", style = "Regular" }
 size = 11
 builtin_box_drawing = true 
 

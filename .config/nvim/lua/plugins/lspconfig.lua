@@ -208,6 +208,7 @@ return {
       'goimports-reviser',
       'gopls',
       'html-lsp',
+      'svelte-language-server',
       'htmx-lsp',
       'marksman',
       'omnisharp',

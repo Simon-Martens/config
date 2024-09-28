@@ -6,10 +6,12 @@
 #   - lazygit
 #   - zellij
 #   - google chrome
+#   - keepass2
 #
+
 sudo apt update
 sudo apt upgrade -y
-sudo apt install curl wget wl-clipboard ninja-build gettext cmake unzip build-essential xsel alacritty git vlc gnome-shell-extension-manager ripgrep -y
+sudo apt install curl wget wl-clipboard ninja-build gettext cmake unzip build-essential xsel alacritty git vlc gnome-shell-extension-manager ripgrep keepass2 -y
 
 # Build neovim
 mkdir source

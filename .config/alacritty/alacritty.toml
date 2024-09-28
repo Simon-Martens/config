@@ -23,6 +23,7 @@
 # ]
 
 import = [
+    "~/.config/alacritty/themes/themes/rose-pine.toml",
     "~/.config/alacritty/global.toml",
     "~/.config/alacritty/local.toml",
 ]
