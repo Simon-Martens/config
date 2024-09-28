@@ -263,7 +263,7 @@ require('lazy').setup {
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       -- Load the colorscheme here
-      vim.cmd.colorscheme 'rose-pine-main'
+      -- vim.cmd.colorscheme 'rose-pine-main'
     end,
   },
 
@@ -350,3 +350,6 @@ cmp.setup.filetype({ 'sql' }, {
 
 -- sql query saving for dadbod
 vim.g.db_ui_save_location = vim.fn.getcwd() .. '/queries/'
+
+-- Set theme
+vim.cmd.colorscheme = 'habamax'
