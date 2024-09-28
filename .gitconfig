@@ -3,3 +3,5 @@
 	email = simonmartens@mailbox.org
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
