@@ -271,7 +271,7 @@ themes {
     }
 }
 
-theme "dracula"
+theme "nord"
 
 // The name of the default layout to load on startup
 // Default: "default"
