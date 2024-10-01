@@ -217,6 +217,7 @@ return {
       'tailwindcss',
       'typescript-language-server',
       'lemminx',
+      'elixir-ls',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
