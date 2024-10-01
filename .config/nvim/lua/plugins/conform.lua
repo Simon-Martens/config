@@ -12,11 +12,11 @@ return {
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --
-      gohtmltmpl = { { 'prettierd', 'prettier' } },
+      gohtmltmpl = { 'prettierd', 'prettier', stop_after_first = true },
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
-      javascript = { { 'prettierd', 'prettier' } },
-      css = { { 'prettierd', 'prettier' } },
+      javascript = { 'prettierd', 'prettier', stop_after_first = true },
+      css = { 'prettierd', 'prettier', stop_after_first = true },
     },
   },
 }

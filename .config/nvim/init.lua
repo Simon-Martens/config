@@ -348,6 +348,13 @@ cmp.setup.filetype({ 'sql' }, {
   },
 })
 
+-- filetype detections
+vim.filetype.add {
+  extension = {
+    webc = 'html',
+  },
+}
+
 -- sql query saving for dadbod
 vim.g.db_ui_save_location = vim.fn.getcwd() .. '/queries/'
 
