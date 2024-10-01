@@ -139,3 +139,5 @@ fi
 if [ -n "$KITTY_WINDOW_ID" ]; then
     alias ssh="kitten ssh"
 fi
+
+. "$HOME/.asdf/asdf.sh"

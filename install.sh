@@ -11,10 +11,10 @@
 
 sudo apt update
 sudo apt upgrade -y
-sudo apt install curl wget wl-clipboard ninja-build gettext cmake unzip build-essential xsel alacritty git vlc gnome-shell-extension-manager ripgrep keepass2 fzf gzip htop make diffutils g++ gettext mono-devel -y 
+sudo apt install curl wget wl-clipboard ninja-build gettext cmake unzip build-essential xsel alacritty git vlc gnome-shell-extension-manager ripgrep keepass2 fzf gzip htop make diffutils g++ gettext mono-devel dirmngr gpg curl gawk libreoffice autoconf m4 libncurses5-dev libwxgtk3.2-dev libwxgtk-webview3.2-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk -y 
 
 # Install language support
-sudo apt install hunspell-de-de-frami hunspell-en-gb language-pack-de language-pack-de-base language-pack-en language-pack-en-base language-pack-gnome-de language-pack-gnome-de-base language-pack-gnome-en language-pack-gnome-en-base wngerman wogerman wbritish
+sudo apt install hunspell-de-de-frami hunspell-en-gb language-pack-de language-pack-de-base language-pack-en language-pack-en-base language-pack-gnome-de language-pack-gnome-de-base language-pack-gnome-en language-pack-gnome-en-base wngerman wogerman wbritish -y
 
 # Build neovim
 mkdir source
@@ -22,6 +22,27 @@ cd source
 git clone git@github.com:neovim/neovim.git
 cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo 
 sudo make install
+
+# isntall asdf 
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1
+source ~/.bashrc 
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin add erlang git@github.com:asdf-vm/asdf-erlang.git
+asdf plugin add elixir git@github.com:asdf-vm/asdf-elixir.git
+asdf plugin add golang git@github.com:asdf-community/asdf-golang.git
+asdf plugin add rust git@github.com:asdf-community/asdf-rust.git
+asdf plugin add dotnet git@github.com:hensou/asdf-dotnet.git
+asdf plugin add air https://github.com/pdemagny/asdf-air.git
+
+asdf install air latest
+asdf install erlang latest
+asdf install nodejs latest
+asdf install elixir latest
+
+asdf global nodejs latest
+asdf global erlang latest
+asdf global air latest
+asdf global elixir latest
 
 # Install latest go version
 cd ~/Downloads
