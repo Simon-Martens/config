@@ -21,6 +21,7 @@
 !.setup.sh 
 !.apt
 !install.sh
+!dconf_settings.ini
 
 !.config/
 !.config/kitty/

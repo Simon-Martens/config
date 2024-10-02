@@ -151,5 +151,7 @@ gext install tophat@fflewddur.github.io
 # Compile gsettings schemas in order to be able to set them
 # sudo cp /.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas/org.gnome.shell.extensions.dash-to-panel.gschema.xml /usr/share/glib-2.0/schemas/
 # sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
-
-
+#
+# Instead, we import the dconf settings from a file:
+cd
+dconf load / < ./dconf_settings.ini
