@@ -35,6 +35,8 @@ cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 
 # isntall asdf 
+# We use asdf only if other methods are not available
+# Node is installed via nvm, rust via rustup and go is downloaded from google servers
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1
 source ~/.bashrc 
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
@@ -47,10 +49,10 @@ asdf plugin add air https://github.com/pdemagny/asdf-air.git
 
 asdf install air latest
 asdf install erlang latest
-asdf install nodejs latest
+# asdf install nodejs latest
 asdf install elixir latest
 
-asdf global nodejs latest
+# asdf global nodejs latest
 asdf global erlang latest
 asdf global air latest
 asdf global elixir latest
@@ -101,13 +103,13 @@ cargo install --locked zellij
 cargo install eza
 
 # Install nvm & node
-# cd ~/source
-# git clone git@github.com:nvm-sh/nvm.git
-# cd nvm
-# ./install.sh
-# cd
-# source .bashrc
-# nvm install node
+cd ~/source
+git clone git@github.com:nvm-sh/nvm.git
+cd nvm
+./install.sh
+cd
+source .bashrc
+nvm install node
 
 # Google Chrome
 cd ~/Downloads
