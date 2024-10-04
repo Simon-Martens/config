@@ -1,6 +1,8 @@
 /*
 .config/*
 .config/Code/User/*
+.local/*
+.local/share/*
 
 !.bash_env
 !.bashrc
@@ -36,6 +38,7 @@
 !.config/waybar/
 !.config/zellij/
 !.fonts/
+!.local/share/remmina/
 
 .config/alacritty/local.toml
 */**/.uuid
