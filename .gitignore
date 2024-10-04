@@ -1,4 +1,4 @@
-*
+/*
 
 !.bash_env
 !.bashrc
@@ -22,7 +22,12 @@
 !dconf_settings.ini
 
 !.config/
+.config/*
 !.config/kitty/
+!.config/Code/
+.config/Code/*
+!.config/Code/User
+.config/Code/User/*
 !.config/Code/User/settings.json
 !.config/alacritty/
 !.config/i3/
@@ -34,8 +39,12 @@
 !.config/waybar/
 !.config/zellij/
 !.fonts/
+
+!.local/
+.local/*
+!.local/share/
+.local/share/*
 !.local/share/remmina/
 
 .config/alacritty/local.toml
 */**/.uuid
-*/
