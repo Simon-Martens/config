@@ -1,8 +1,4 @@
-/*
-.config/*
-.config/Code/User/*
-.local/*
-.local/share/*
+*
 
 !.bash_env
 !.bashrc
@@ -42,3 +38,4 @@
 
 .config/alacritty/local.toml
 */**/.uuid
+*/
