@@ -10,6 +10,7 @@
 #   - gnome extensions
 #   uvm.
 
+################################# SYSTEM PACKAGES & REQUIREMENTS ###########################################################################
 sudo apt update
 sudo apt upgrade -y
 sudo apt install curl wget wl-clipboard ninja-build gettext cmake unzip build-essential xsel alacritty git vlc gnome-shell-extension-manager ripgrep keepass2 fzf gzip htop make diffutils g++ gettext mono-devel dirmngr gpg curl gawk libreoffice autoconf m4 libncurses5-dev libwxgtk3.2-dev libwxgtk-webview3.2-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk fd-find gnome-sushi gnome-tweak-tool gir1.2-gtop-2.0 gir1.2-gtkclutter-1.0 remmina pipx postgresql inotify-tools python3-pip python-is-python3 -y 
@@ -24,16 +25,8 @@ sudo apt install -y \
 # Install language support
 sudo apt install hunspell-de-de-frami hunspell-en-gb language-pack-de language-pack-de-base language-pack-en language-pack-en-base language-pack-gnome-de language-pack-gnome-de-base language-pack-gnome-en language-pack-gnome-en-base wngerman wogerman wbritish -y
 
-# Default terminal
-sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
 
-# Build neovim
-mkdir source
-cd source
-git clone git@github.com:neovim/neovim.git
-cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo 
-sudo make install
-
+################################# DEVELOPMENT ENVIRONMENT & REQUIREMENTS ###########################################################################
 # isntall asdf 
 # We use asdf only if other methods are not available
 # Node is installed via nvm, rust via rustup and go is downloaded from google servers
@@ -82,25 +75,8 @@ else
   echo "Go $VERSION installed!"
 fi
 
-# Install LocalSend
-LOCALSEND_VERSION=$(curl -s "https://api.github.com/repos/localsend/localsend/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-wget -O localsend.deb "https://github.com/localsend/localsend/releases/latest/download/LocalSend-${LOCALSEND_VERSION}-linux-x86-64.deb"
-sudo apt install -y ./localsend.deb
-
-# Install lazygit
-LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-tar xf lazygit.tar.gz lazygit
-sudo install lazygit /usr/local/bin
-
 # Install rustup -- Interactive
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-
-# Install zellij
-cd
-source .bashrc
-cargo install --locked zellij
-cargo install eza
 
 # Install nvm & node
 cd ~/source
@@ -110,6 +86,49 @@ cd nvm
 cd
 source .bashrc
 nvm install node
+
+# Default terminal
+sudo update-alternatives --set x-terminal-emulator /usr/bin/alacritty
+
+# Build neovim
+mkdir source
+cd source
+git clone git@github.com:neovim/neovim.git
+cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo 
+sudo make install
+
+
+################################# GNOME SETTINGS & USER INTERFACE ###########################################################################
+# Refresh font cache
+fc-cache -f
+
+# Gnome Extensions from Shell
+pipx install gnome-extensions-cli --system-site-packages
+gext install speedinator@liam.moe
+gext install dash-to-panel@jderose9.github.com
+gext install BingWallpaper@ineffable-gmail.com
+gext install tophat@fflewddur.github.io
+ 
+# Compile gsettings schemas in order to be able to set them
+# sudo cp /.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas/org.gnome.shell.extensions.dash-to-panel.gschema.xml /usr/share/glib-2.0/schemas/
+# sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+#
+# Instead, we import the dconf settings from a file:
+cd
+dconf load / < ./dconf_settings.ini
+
+
+#################################### APPLICATIONS ######################################################################################
+# Install lazygit
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
+
+# Install LocalSend
+LOCALSEND_VERSION=$(curl -s "https://api.github.com/repos/localsend/localsend/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+wget -O localsend.deb "https://github.com/localsend/localsend/releases/latest/download/LocalSend-${LOCALSEND_VERSION}-linux-x86-64.deb"
+sudo apt install -y ./localsend.deb
 
 # Google Chrome
 cd ~/Downloads
@@ -122,6 +141,13 @@ sudo apt-get install -f
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo wget -qO /etc/apt/keyrings/docker.asc https://download.docker.com/linux/ubuntu/gpg
 sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Install zellij
+cd
+source .bashrc
+cargo install --locked zellij
+cargo install eza
+
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update
 
@@ -140,20 +166,4 @@ curl -sLo lazydocker.tar.gz "https://github.com/jesseduffield/lazydocker/release
 tar -xf lazydocker.tar.gz lazydocker
 sudo install lazydocker /usr/local/bin
 
-# Refresh font cache
-fc-cache -f
 
-# Gnome Extensions from Shell
-pipx install gnome-extensions-cli --system-site-packages
-gext install speedinator@liam.moe
-gext install dash-to-panel@jderose9.github.com
-gext install BingWallpaper@ineffable-gmail.com
-gext install tophat@fflewddur.github.io
- 
-# Compile gsettings schemas in order to be able to set them
-# sudo cp /.local/share/gnome-shell/extensions/dash-to-panel@jderose9.github.com/schemas/org.gnome.shell.extensions.dash-to-panel.gschema.xml /usr/share/glib-2.0/schemas/
-# sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
-#
-# Instead, we import the dconf settings from a file:
-cd
-dconf load / < ./dconf_settings.ini
