@@ -120,6 +120,7 @@ dconf load / < ./dconf_settings.ini
 
 #################################### APPLICATIONS ######################################################################################
 # Install lazygit
+cd ~/Downloads
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
@@ -131,7 +132,6 @@ wget -O localsend.deb "https://github.com/localsend/localsend/releases/latest/do
 sudo apt install -y ./localsend.deb
 
 # Google Chrome
-cd ~/Downloads
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt-get install -f
