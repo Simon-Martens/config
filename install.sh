@@ -166,4 +166,5 @@ curl -sLo lazydocker.tar.gz "https://github.com/jesseduffield/lazydocker/release
 tar -xf lazydocker.tar.gz lazydocker
 sudo install lazydocker /usr/local/bin
 
-
+# We set this to avoid time confusion in dual-boot setups
+timedatectl set-local-rtc 1 --adjust-system-clock
