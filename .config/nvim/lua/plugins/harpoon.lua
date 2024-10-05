@@ -8,7 +8,7 @@ return {
 
     vim.keymap.set('n', '<leader>a', function()
       harpoon:list():add()
-    end)
+    end, { desc = 'Add current buffer to harpoon list' })
     -- basic telescope configuration
     local conf = require('telescope.config').values
     local function toggle_telescope(harpoon_files)
@@ -47,10 +47,10 @@ return {
     end, { desc = 'Select fourth entry in the harpoon quicklist' })
 
     -- Toggle previous & next buffers stored within Harpoon list
-    vim.keymap.set('n', '<leader>p', function()
+    vim.keymap.set('n', '<leader>,', function()
       harpoon:list():prev()
     end, { desc = 'Select previous entry in the harpoon quicklist' })
-    vim.keymap.set('n', '<leader>n', function()
+    vim.keymap.set('n', '<leader>.', function()
       harpoon:list():next()
     end, { desc = 'Select next entry in the harpoon quicklist' })
   end,

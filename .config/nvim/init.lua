@@ -125,6 +125,13 @@ vim.g.db_ui_save_location = vim.fn.getcwd() .. '.queries/'
 -------------------------------------------------------------------------------------------------------
 --  See `:help vim.keymap.set()`
 
+-- Replace word I am on in the whole file
+vim.keymap.set('n', '<leader>rw', ':%s/\\<<C-r><C-w>\\>//g<left><left>', { noremap = true, silent = true, desc = 'Replace word in file' })
+
+-- Allow moving selected text horizontally in visual mode
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = 'Move selection up' })
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = 'Move selection down' })
+
 -- Clear highlight on pressing <Esc> in normal mode:
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -135,6 +142,13 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
+
+-- Delete without yanking
+vim.keymap.set('n', '<leader>d', '"_d', { noremap = true, desc = 'Delete without yanking' })
+vim.keymap.set('v', '<leader>d', '"_d', { noremap = true, desc = 'Delete without yanking' })
+
+-- Paste without yanking
+vim.keymap.set('n', '<leader>p', '"_dP', { noremap = true, desc = 'Paste without yanking' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>gM', function()
@@ -177,7 +191,7 @@ vim.keymap.set('n', 'gT', '<cmd>tabprevious<CR>', { desc = '[G]oto previous [T]a
 vim.keymap.set('n', '<Leader><S-Tab>', '<cmd>tabprevious<CR>', { desc = '[G]oto previous [T]ab' })
 vim.keymap.set('n', '<Leader><Tab>', '<cmd>tabnext<CR>', { desc = '[G]oto previous [T]ab' })
 vim.keymap.set('n', 'gt', '<cmd>tabnext<CR>', { desc = '[G]oto to next [t]ab' })
-vim.keymap.set('n', '<Leader>t', '<cmd>tabnew<CR>', { desc = 'Open a new tab' })
+vim.keymap.set('n', '<Leader>t', '<cmd>tabnew<CR>', { remap = true, desc = 'Open a new tab' })
 
 -- Further plugin dependent keybinds
 -- See bbye for closing buffer keymaps <Leader>q <Leader>Q
