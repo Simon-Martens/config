@@ -29,7 +29,7 @@ return {
         :find()
     end
 
-    vim.keymap.set('n', '<C-e>', function()
+    vim.keymap.set('n', '<leader>h', function()
       toggle_telescope(harpoon:list())
     end, { desc = 'Open harpoon window' })
 
@@ -47,10 +47,10 @@ return {
     end, { desc = 'Select fourth entry in the harpoon quicklist' })
 
     -- Toggle previous & next buffers stored within Harpoon list
-    vim.keymap.set('n', '<C-S-P>', function()
+    vim.keymap.set('n', '<leader>p', function()
       harpoon:list():prev()
     end, { desc = 'Select previous entry in the harpoon quicklist' })
-    vim.keymap.set('n', '<C-S-N>', function()
+    vim.keymap.set('n', '<leader>n', function()
       harpoon:list():next()
     end, { desc = 'Select next entry in the harpoon quicklist' })
   end,
