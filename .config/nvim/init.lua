@@ -133,6 +133,9 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
+-- Preserve Paste Buffer on Pasting with <leader>p
+vim.xnoremap('<leader>p', '"_dP', { desc = 'Paste without replacing the register.' })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>gM', function()
   vim.diagnostic.jump { count = -1 }
