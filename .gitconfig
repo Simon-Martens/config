@@ -1,6 +1,6 @@
 [user]
 	name = Simon Martens
-	email = simonmartens@mailbox.org
+	email = simon.martens@mailbox.org
 [pull]
 	rebase = false
 [init]
