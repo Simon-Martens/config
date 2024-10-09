@@ -1,0 +1,20 @@
+{
+    "[xml]": {
+        "editor.defaultFormatter": "DotJoshJohnson.xml"
+    },
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "workbench.sideBar.location": "right",
+    "workbench.activityBar.location": "top",
+    "window.customTitleBarVisibility": "auto",
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "custom",
+    "editor.minimap.enabled": false,
+    "redhat.telemetry.enabled": false,
+    "editor.stickyScroll.enabled": false,
+    "workbench.startupEditor": "none",
+    "git.openRepositoryInParentFolders": "always",
+    "sqltools.useNodeRuntime": true,
+    "xml.server.vmargs": "-Xmx256M"
+}

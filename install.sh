@@ -115,7 +115,8 @@ gext install tophat@fflewddur.github.io
 #
 # Instead, we import the dconf settings from a file:
 cd
-dconf load / < ./dconf_settings.ini
+# dconf load / < ./dconf_settings.ini
+# We rathe do this manually to be able to execute this script multiple times
 
 
 #################################### APPLICATIONS ######################################################################################
