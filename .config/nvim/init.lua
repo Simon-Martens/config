@@ -21,7 +21,6 @@
 
 Originally Kickstart.nvim by TJ DeVries:
 https://github.com/nvim-lua/kickstart.nvim
-
 --]]
 
 -- Options
@@ -363,5 +362,4 @@ vim.filetype.add {
 -- sql query saving for dadbod
 vim.g.db_ui_save_location = vim.fn.getcwd() .. '/queries/'
 
--- Set theme
-vim.cmd.colorscheme = 'habamax'
+vim.cmd.colorscheme 'habamax'
