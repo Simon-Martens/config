@@ -95,6 +95,16 @@ return {
         --  For example, in C this would take you to the header
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
+        -- Diagnostic keymaps
+        vim.keymap.set('n', 'gM', function()
+          vim.diagnostic.jump { count = -1 }
+        end, { desc = 'Go to previous Diagnostic [m]essage' })
+        vim.keymap.set('n', 'gm', function()
+          vim.diagnostic.jump { count = 1 }
+        end, { desc = 'Go to next Diagnostic [m]essage' })
+        vim.keymap.set('n', '<leader>m', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+        vim.keymap.set('n', 'gq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.
         --    See `:help CursorHold` for information about when this is executed

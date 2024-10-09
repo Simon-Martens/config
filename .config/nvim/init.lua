@@ -150,18 +150,6 @@ vim.keymap.set('v', '<leader>d', '"_d', { noremap = true, desc = 'Delete without
 -- Paste without yanking
 vim.keymap.set('n', '<leader>p', '"_dP', { noremap = true, desc = 'Paste without yanking' })
 
--- Diagnostic keymaps
-vim.keymap.set('n', '<leader>gM', function()
-  vim.diagnostic.jump { count = -1 }
-end, { desc = 'Go to previous Diagnostic [m]essage' })
-vim.keymap.set('n', '<leader>gm', function()
-  vim.diagnostic.jump { count = 1 }
-end, { desc = 'Go to next Diagnostic [m]essage' })
-vim.keymap.set('n', '<leader>m', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, { noremap = true, silent = true, desc = 'Open diagnostic float if available' })
-
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
