@@ -227,7 +227,8 @@ return {
       'tailwindcss',
       'typescript-language-server',
       'lemminx',
-      'elixir-ls',
+      'rust-analyzer',
+      'taplo',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

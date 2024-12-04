@@ -16,5 +16,6 @@
     "workbench.startupEditor": "none",
     "git.openRepositoryInParentFolders": "always",
     "sqltools.useNodeRuntime": true,
-    "xml.server.vmargs": "-Xmx256M"
+    "xml.server.vmargs": "-Xmx256M",
+    "xml.symbols.maxItemsComputed": 20000
 }
