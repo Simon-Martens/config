@@ -13,8 +13,31 @@ return {
     local red = vim.g.terminal_color_1
     local yellow = vim.g.terminal_color_3
 
+    local function get_c_filename(tab)
+      if tab.focused ~= nil and tab.focused.buffer ~= nil then
+        return tab.focused.buffer.filename
+      end
+
+      if #tab.windows == 0 then
+        return '[No Windows]'
+      end
+
+      -- local win = tab.windows[1]
+      -- if win.buffer == nil then
+      --   return '[No Buffer]'
+      -- else
+      --   return win.buffer.filename
+      -- end
+
+      return ''
+    end
+
     require('cokeline').setup {
       show_if_buffers_are_at_least = 1,
+
+      pick = {
+        use_filename = true,
+      },
 
       default_hl = {
         fg = function(buffer)
@@ -71,7 +94,7 @@ return {
         components = {
           {
             text = function(tab)
-              return ' ' .. tab.number .. ' '
+              return ' ' .. tab.number .. ' ' .. get_c_filename(tab) .. ' '
             end,
             fg = function(tab)
               return tab.is_active and get_hex('Normal', 'fg') or get_hex('Comment', 'fg')
