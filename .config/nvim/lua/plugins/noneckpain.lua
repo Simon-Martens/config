@@ -1,9 +1,11 @@
+-- Shows a global buffer on the right side of the screen
+-- so the text doesnt get too wide and hard to read.
 return {
   'shortcuts/no-neck-pain.nvim',
   config = function()
     local nnp = require 'no-neck-pain'
     nnp.setup {
-      width = 75,
+      width = 80,
       minSideBufferWidth = 20,
       fallbackOnBufferDelete = false,
       buffers = {

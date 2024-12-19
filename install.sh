@@ -174,3 +174,6 @@ sudo apt-get install brightness-controller
 
 # We set this to avoid time confusion in dual-boot setups
 timedatectl set-local-rtc 1 --adjust-system-clock
+
+# Tmux setup
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

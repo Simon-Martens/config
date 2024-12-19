@@ -25,9 +25,27 @@ require('lazy').setup {
       -- vim.cmd.colorscheme 'tokyonight-night'
 
       -- You can configure highlights by doing something like
-      vim.cmd.hi 'Comment gui=none'
+      -- vim.cmd.hi 'Comment gui=none'
     end,
   },
+
+  {
+    'shaunsingh/nord.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- vim.cmd.colorscheme 'nord'
+    end,
+  },
+
+{
+    'AlexvZyl/nordic.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+        -- require('nordic').load()
+    end
+},
 
   {
     'rose-pine/neovim',

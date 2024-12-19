@@ -40,17 +40,17 @@ fi
 unset rc
 
 # RUN ZELLIJ if available
-if command -v zellij &> /dev/null && [[ -z "$ZELLIJ" ]] && [[ $- == *i* ]]; then
-    if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
-        zellij attach -c
-    else
-        zellij
-    fi
-
-    if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
-        exit
-    fi
-fi
+# if command -v zellij &> /dev/null && [[ -z "$ZELLIJ" ]] && [[ $- == *i* ]]; then
+#     if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+#         zellij attach -c
+#     else
+#         zellij
+#     fi
+#
+#     if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+#         exit
+#     fi
+# fi
 
 alias ll='ls -salh --color=auto --hyperlink=auto'
 alias e='nvim'
@@ -148,3 +148,16 @@ export PATH="$HOME/gems/bin:$PATH"
 
 
 export MANPAGER='nvim +Man!'
+
+# tat: tmux attach
+function tat {
+  name=$(basename `pwd` | sed -e 's/\.//g')
+
+  if tmux ls 2>&1 | grep "$name"; then
+    tmux attach -t "$name"
+  elif [ -f .envrc ]; then
+    direnv exec / tmux new-session -s "$name"
+  else
+    tmux new-session -s "$name"
+  fi
+}

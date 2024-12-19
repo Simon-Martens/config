@@ -1,3 +1,4 @@
+-- Enables a project-scoped scratch buffer to keep random thoughts
 return {
   'folke/snacks.nvim',
   keys = {

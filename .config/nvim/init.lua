@@ -28,4 +28,4 @@ require 'keymaps'
 require 'autocommands'
 require 'lazysetup'
 
-vim.cmd.colorscheme 'rose-pine'
+vim.cmd.colorscheme 'nordic'
