@@ -50,11 +50,28 @@ return { -- Fuzzy Finder (files, lsp, etc)
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
       --
-      -- defaults = {
-      --   mappings = {
-      --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-      --   },
-      -- },
+      defaults = {
+        mappings = {
+          n = {
+            ['<esc>'] = require('telescope.actions').close,
+            ['q'] = require('telescope.actions').close,
+            ['<leader><leader>'] = require('telescope.actions').close,
+            ['<C-j>'] = require('telescope.actions').move_selection_next,
+            ['<C-k>'] = require('telescope.actions').move_selection_previous,
+            ['d'] = require('telescope.actions').delete_buffer,
+            ['<C-q>'] = require('telescope.actions').send_to_qflist,
+          },
+          i = {
+            ['<esc>'] = require('telescope.actions').close,
+            ['<leader><leader>'] = require('telescope.actions').close,
+            ['<C-j>'] = require('telescope.actions').move_selection_next,
+            ['<C-k>'] = require('telescope.actions').move_selection_previous,
+            ['<C-q>'] = require('telescope.actions').send_to_qflist,
+            ['<C-d>'] = require('telescope.actions').delete_buffer,
+            ['<C-c>'] = require('telescope.actions').close,
+          },
+        },
+      },
       -- pickers = {}
       extensions = {
         ['ui-select'] = {
@@ -86,12 +103,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>s.', function()
       builtin.oldfiles(themes.get_ivy {})
     end, { desc = '[S]earch Recent Files ("." for repeat)' })
-    vim.keymap.set(
-      'n',
-      '<leader><leader>',
-      '<Cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<cr>',
-      { desc = '[ ] Find existing buffers' }
-    )
+    vim.keymap.set('n', '<leader><leader>', '<Cmd>Telescope buffers sort_mru=true sort_lastused=true theme=ivy<cr>', { desc = '[ ] Find existing buffers' })
 
     -- Grep
     vim.keymap.set('n', '<leader>sw', function()
