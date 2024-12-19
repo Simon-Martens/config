@@ -27,6 +27,11 @@ vim.keymap.set('v', '<leader>d', '"_d', { noremap = true, desc = 'Delete without
 -- Paste without yanking
 vim.keymap.set('n', '<leader>p', '"_dP', { noremap = true, desc = 'Paste without yanking' })
 
+-- Disable deselection when indenting in visual mode
+vim.keymap.set('v', '<', '<gv', { noremap = true, silent = true })
+vim.keymap.set('v', '>', '>gv', { noremap = true, silent = true })
+
+--
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
