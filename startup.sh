@@ -2,7 +2,11 @@
 # Headless bash startup script to attach to a default home directory session
 
 function tat {
-  name=$(basename `pwd` | sed -e 's/\.//g')
+	if [ $(pwd) == "$HOME" ]; then
+		name="home"
+	else
+		name=$(basename `pwd` | sed -e 's/\.//g')
+	fi
 
   if tmux ls 2>&1 | grep "$name"; then
     tmux attach -t "$name"
