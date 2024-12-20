@@ -13,7 +13,7 @@
 ################################# SYSTEM PACKAGES & REQUIREMENTS ###########################################################################
 sudo apt update
 sudo apt upgrade -y
-sudo apt install curl wget wl-clipboard ninja-build gettext cmake unzip build-essential xsel alacritty git vlc gnome-shell-extension-manager ripgrep keepass2 fzf gzip htop make diffutils g++ gettext mono-devel dirmngr gpg curl gawk libreoffice autoconf m4 libncurses5-dev libwxgtk3.2-dev libwxgtk-webview3.2-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk fd-find gnome-sushi gnome-tweak-tool gir1.2-gtop-2.0 gir1.2-gtkclutter-1.0 remmina pipx postgresql inotify-tools python3-pip python-is-python3 brightnessctl apt-listchanges -y 
+sudo apt install tmux curl wget wl-clipboard ninja-build gettext cmake unzip build-essential xsel alacritty git vlc gnome-shell-extension-manager ripgrep keepass2 fzf gzip htop make diffutils g++ gettext mono-devel dirmngr gpg curl gawk libreoffice autoconf m4 libncurses5-dev libwxgtk3.2-dev libwxgtk-webview3.2-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk fd-find gnome-sushi gnome-tweak-tool gir1.2-gtop-2.0 gir1.2-gtkclutter-1.0 remmina pipx postgresql inotify-tools python3-pip python-is-python3 brightnessctl apt-listchanges -y 
 
 # More libs (copied from omakub)
 sudo apt install -y \
@@ -177,3 +177,6 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 
 # Tmux setup
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Zoxide
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
