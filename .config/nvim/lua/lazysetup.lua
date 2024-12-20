@@ -30,6 +30,33 @@ require('lazy').setup {
   },
 
   {
+    'gmr458/cold.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- vim.cmd.colorscheme 'cold'
+    end,
+  },
+
+  {
+    'eddyekofo94/gruvbox-flat.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- vim.cmd.colorscheme 'gruvbox-flat'
+    end,
+  },
+
+  {
+    'sainnhe/sonokai',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- vim.cmd.colorscheme 'sonokai'
+    end,
+  },
+
+  {
     'shaunsingh/nord.nvim',
     lazy = false,
     priority = 1000,
@@ -38,14 +65,14 @@ require('lazy').setup {
     end,
   },
 
-{
+  {
     'AlexvZyl/nordic.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-        -- require('nordic').load()
-    end
-},
+      -- require('nordic').load()
+    end,
+  },
 
   {
     'rose-pine/neovim',
