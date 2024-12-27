@@ -10,6 +10,7 @@
 ## https://github.com/zigzap/zap
 ## https://github.com/karlseguin/http.zig
 
+cd ~/Downloads
 V=0.13.0
 VERSION=zig-linux-x86_64
 wget https://ziglang.org/download/${V}/${VERSION}-${V}.tar.xz
