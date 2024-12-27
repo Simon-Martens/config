@@ -66,11 +66,6 @@ return {
         --  Useful when your language has ways of declaring types without an actual implementation.
         map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
 
-        -- Jump to the type of the word under your cursor.
-        --  Useful when you're not sure what type a variable is and you want to see
-        --  the definition of its *type*, not where it was *defined*.
-        map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
-
         -- Fuzzy find all the symbols in your current document.
         --  Symbols are things like variables, functions, types, etc.
         map('<leader>sS', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
@@ -93,7 +88,7 @@ return {
 
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header
-        map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+        map('gD', vim.lsp.buf.definition, '[G]oto [D]definition')
 
         -- Diagnostic keymaps
         vim.keymap.set('n', 'gM', function()
@@ -102,7 +97,7 @@ return {
         vim.keymap.set('n', 'gm', function()
           vim.diagnostic.jump { count = 1 }
         end, { desc = 'Go to next Diagnostic [m]essage' })
-        vim.keymap.set('n', '<leader>m', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+
         vim.keymap.set('n', 'gq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
         -- The following two autocommands are used to highlight references of the

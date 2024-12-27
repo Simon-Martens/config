@@ -41,6 +41,8 @@
 !.config/zellij/
 !.fonts/
 
+!scripts/
+
 !.local/
 .local/*
 !.local/share/

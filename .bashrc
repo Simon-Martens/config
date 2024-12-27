@@ -24,7 +24,7 @@ fi
 # export SYSTEMD_PAGER=
 
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/home/simon/go/bin
+export PATH=$PATH:/usr/local/zig
 export PATH=$PATH:/home/simon/.dotnet
 
 # USER SCRIPTS
