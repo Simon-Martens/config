@@ -33,7 +33,7 @@ sudo apt install hunspell-de-de-frami hunspell-en-gb language-pack-de language-p
 ./install-go.sh
 ./install-rust.sh
 ./install-node.sh
-
+./install-zig.sh
 
 # Build neovim
 mkdir source

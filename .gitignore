@@ -25,6 +25,7 @@
 !.config/
 .config/*
 !.config/kitty/
+!.config/ghostty/
 !.config/Code/
 .config/Code/*
 !.config/Code/User

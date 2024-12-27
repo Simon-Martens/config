@@ -1,0 +1,13 @@
+# General
+mouse-hide-while-typing = true
+shell-integration = bash
+cursor-style-blink = true
+cursor-style = "bar"
+clipboard-read = allow
+clipboard-write = allow
+fullscreen = true
+theme = "Dark Modern"
+
+# Keybindings
+keybind = ctrl+shift+f=toggle_fullscreen
+keybind = ctrl+shift+d=toggle_window_decorations

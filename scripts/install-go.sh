@@ -26,3 +26,5 @@ else
 fi
 
 export PATH=$PATH:/usr/local/go/bin
+
+go install github.com/air-verse/air@latest

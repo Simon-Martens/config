@@ -91,3 +91,7 @@ vim.opt.fen = false
 
 -- Set highlight on search,
 vim.opt.hlsearch = true
+
+-- Reset the cursor
+vim.cmd.normal ':set guicursor='
+vim.cmd.normal ':autocmd OptionSet guicursor noautocmd set guicursor='
