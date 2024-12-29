@@ -6,7 +6,10 @@ cursor-style = "bar"
 clipboard-read = allow
 clipboard-write = allow
 fullscreen = true
+confirm-close-surface = false
 theme = "Dark Modern"
+# font-family = "CaskaydiaMono Nerd Font"
+font-size = 13.5
 
 # Keybindings
 keybind = ctrl+shift+f=toggle_fullscreen

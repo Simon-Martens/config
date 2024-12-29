@@ -57,7 +57,6 @@ alias e='nvim'
 alias vim='nvim'
 alias v='nvim'
 alias c='clear'
-alias g='git'
 alias lg='lazygit'
 alias gs='git status'
 alias ga='git add'
@@ -82,6 +81,13 @@ alias dsync='dstask sync'
 alias dnote='dstask note'
 alias dstop='dstask stop'
 alias drm='dstask remove'
+
+# git do it faster
+function g() {
+		git add .
+		git commit -m "$1"
+		git push
+}
 
 # removal protection
 alias rm='rm -I'
