@@ -8,8 +8,13 @@ clipboard-write = allow
 fullscreen = true
 confirm-close-surface = false
 theme = "Dark Modern"
-# font-family = "CaskaydiaMono Nerd Font"
+
+# Font settings
+font-family = "UbuntuMono"
 font-size = 13.5
+font-feature = -calt
+adjust-cell-height = 2
+adjust-cell-width = 3%
 
 # Keybindings
 keybind = ctrl+shift+f=toggle_fullscreen
