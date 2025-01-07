@@ -13,7 +13,7 @@ return {
           enabled = true,
           scratchPad = {
             enabled = true,
-            pathToFile = '~/.local/share/nvim/scratch/global.md',
+            pathToFile = vim.fn.getcwd() .. '/scratchpad.md',
           },
         },
         left = {
