@@ -6,6 +6,8 @@ cd ~
 mkdir source
 cd source
 git clone git@github.com:neovim/neovim.git
-cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo 
+cd neovim
+git pull
+make CMAKE_BUILD_TYPE=RelWithDebInfo 
 sudo make install
 
