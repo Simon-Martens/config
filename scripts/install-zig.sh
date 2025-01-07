@@ -16,7 +16,7 @@ VERSION=zig-linux-x86_64
 wget https://ziglang.org/download/${V}/${VERSION}-${V}.tar.xz
 tar xvf ${VERSION}-${V}.tar.xz
 rm -f ${VERSION}-${V}.tar.xz
-mv ${VERSION}-${V} /usr/local/zig
+sudo mv ${VERSION}-${V} /usr/local/zig
 
 export PATH=$PATH:/usr/local/zig
 
