@@ -5,14 +5,15 @@ cursor-style-blink = true
 cursor-style = "bar"
 clipboard-read = allow
 clipboard-write = allow
-fullscreen = true
 confirm-close-surface = false
 theme = "Dark Modern"
+window-save-state = always
+copy-on-select = true
 
 # Font settings
 font-family = "UbuntuMono"
-font-size = 13.5
-font-feature = -calt
+font-size = 13.3
+font-feature = -calt # Disables programming font ligatures as they look ugly af
 adjust-cell-height = 2
 adjust-cell-width = 3%
 
