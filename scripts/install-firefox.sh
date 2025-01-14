@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo add-apt-repository ppa:mozillateam/ppa -y
-sudo apt remove --autoremove firefox
+sudo apt remove --autoremove firefox -y
 sudo snap remove --purge firefox
 
 echo '
