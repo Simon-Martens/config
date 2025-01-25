@@ -66,12 +66,12 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 -- vim.keymap.set({ 'n', 'i', 'v' }, '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the window up', silent = true })
 vim.keymap.set({ 'n', 'v' }, '<Left>', '<C-w><C-h>', { desc = 'Move focus to the left window', silent = true })
 vim.keymap.set({ 'n', 'v' }, '<Right>', '<C-w><C-l>', { desc = 'Move focus to the right window', silent = true })
+vim.keymap.set({ 'n', 'v' }, '<Down>', '<C-w><C-j>', { desc = 'Move focus to the window down', silent = true })
+vim.keymap.set({ 'n', 'v' }, '<Up>', '<C-w><C-k>', { desc = 'Move focus to the window up', silent = true })
 
 -- Keybinds to make buffer scopes easier
 vim.keymap.set('n', 'gb', '<cmd>bn<CR>', { desc = 'Go to next buffer', silent = true })
 vim.keymap.set('n', 'gB', '<cmd>bp<CR>', { desc = 'Go to previous buffer', silent = true })
-vim.keymap.set({ 'n', 'v' }, '<Down>', '<cmd>bn<CR>', { desc = 'Move focus to the next buffer', silent = true })
-vim.keymap.set({ 'n', 'v' }, '<Up>', '<cmd>bp<CR>', { desc = 'Move focus to the previous buffer', silent = true })
 vim.keymap.set({ 'n', 'v' }, '<Tab>', '<cmd>bn<CR>', { desc = 'Move focus to the next buffer', silent = true })
 
 -- Keybinds to make tab scopes easier
