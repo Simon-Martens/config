@@ -45,13 +45,13 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = 'number'
 
 -- Decrease update time
 vim.opt.updatetime = 250
 
 -- Time when the help popup will appear
-vim.opt.timeoutlen = 200
+vim.opt.timeoutlen = 300
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -70,7 +70,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 16
 
 -- Tab size
 vim.opt.tabstop = 2
@@ -93,5 +93,6 @@ vim.opt.fen = false
 vim.opt.hlsearch = true
 
 -- Reset the cursor
+-- BUG: this is still not working for tmux with ghostty
 vim.cmd.normal ':set guicursor='
 vim.cmd.normal ':autocmd OptionSet guicursor noautocmd set guicursor='

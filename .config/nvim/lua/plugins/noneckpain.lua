@@ -18,6 +18,9 @@ return {
         },
         left = {
           enabled = false,
+          scratchPad = {
+            enabled = false,
+          },
         },
         bo = {
           filetype = 'md',
