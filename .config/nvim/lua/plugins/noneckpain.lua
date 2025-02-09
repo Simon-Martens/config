@@ -5,7 +5,7 @@ return {
   config = function()
     local nnp = require 'no-neck-pain'
     nnp.setup {
-      width = 80,
+      width = 100,
       minSideBufferWidth = 20,
       fallbackOnBufferDelete = false,
       buffers = {

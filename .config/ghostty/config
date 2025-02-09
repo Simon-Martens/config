@@ -12,7 +12,7 @@ copy-on-select = true
 
 # Font settings
 font-family = "UbuntuMono"
-font-size = 13.8
+font-size = 14.8
 font-feature = -calt # Disables programming font ligatures as they look ugly af
 adjust-cell-height = 2
 adjust-cell-width = 3%
