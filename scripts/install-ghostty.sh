@@ -4,6 +4,7 @@ cd ~
 cd source
 git clone git@github.com:ghostty-org/ghostty.git
 cd ghostty
+git pull
 
 # Install dependencies, change if neccessary
 sudo apt install libgtk-4-dev libadwaita-1-dev git -y
