@@ -72,7 +72,6 @@ vim.keymap.set({ 'n', 'v' }, '<Up>', '<C-w><C-k>', { desc = 'Move focus to the w
 -- Keybinds to make buffer scopes easier
 vim.keymap.set('n', 'gb', '<cmd>bn<CR>', { desc = 'Go to next buffer', silent = true })
 vim.keymap.set('n', 'gB', '<cmd>bp<CR>', { desc = 'Go to previous buffer', silent = true })
-vim.keymap.set({ 'n', 'v' }, '<Tab>', '<cmd>bn<CR>', { desc = 'Move focus to the next buffer', silent = true })
 
 -- Keybinds to make tab scopes easier
 vim.keymap.set('n', 'gT', '<cmd>tabprevious<CR>', { desc = '[G]oto previous [T]ab' })

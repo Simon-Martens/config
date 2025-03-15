@@ -28,4 +28,5 @@ require 'keymaps'
 require 'autocommands'
 require 'lazysetup'
 
-vim.cmd.colorscheme 'nordic'
+vim.cmd.colorscheme 'habamax'
+vim.api.nvim_set_hl(0, 'VertSplit', { fg = '#1a1a1a', bg = '#1a1a1a' })
