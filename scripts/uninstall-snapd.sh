@@ -3,7 +3,7 @@
 # Remove snaps completely from Ubuntu
 # Tested on Ubuntu 24.04
 
-while [[ $(snap list | wc -l) -gt 1 ]]; do
+while $(snap list | wc -l) -gt 1; do
   for p in $(snap list | awk 'NR>1 {print $1}'); do
     sudo snap remove "$p"
   done
