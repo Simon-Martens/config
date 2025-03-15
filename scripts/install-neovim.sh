@@ -5,9 +5,15 @@ sudo apt install -y ninja-build gettext libtool libtool-bin autoconf automake cm
 cd ~
 mkdir source
 cd source
-git clone git@github.com:neovim/neovim.git
-cd neovim
-git pull
+
+if [ -d neovim ]; then
+		cd neovim
+		git pull
+else
+	git clone git@github.com:neovim/neovim.git
+	cd neovim
+fi
 make CMAKE_BUILD_TYPE=RelWithDebInfo 
+
 sudo make install
 
