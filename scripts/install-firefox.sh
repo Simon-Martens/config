@@ -11,4 +11,4 @@ Pin-Priority: 900
 ' | sudo tee /etc/apt/preferences.d/mozilla
 
 sudo apt update 
-sudo apt install firefox -y
+sudo apt install firefox fonts-lyx -y
