@@ -5,7 +5,7 @@
 
 while [ $(snap list | wc -l) -gt 1 ]; do
   for p in $(snap list | awk 'NR>1 {print $1}'); do
-    sudo snap remove "$p"
+    sudo snap remove "$p" --purge
   done
 done
 
