@@ -150,7 +150,6 @@ if [ -n "$KITTY_WINDOW_ID" ]; then
     alias ssh="kitten ssh"
 fi
 
-. "$HOME/.asdf/asdf.sh"
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
