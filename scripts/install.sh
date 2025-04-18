@@ -13,7 +13,12 @@
 ./install-packages.sh
 ./install-german.sh
 
+
+############################## PREP
 mkdir -p ~/source
+cd ~/scripts
+./uninstall-snapd.sh
+./install-flatpak.sh
 
 ############################## LANGUAGES 
 ./install-go.sh
