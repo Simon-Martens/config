@@ -17,9 +17,9 @@ commit() {
 	FILES=$(git status -s -uno)
 
 	echo "{{ Bold \"Files \" }} $(echo $FILES)" | gum format -t template 
-	echo \n
+	echo '\n'
 	echo "{{ Bold \"Message \" }} $(echo $SUMMARY)" | gum format -t template
-	echo \n
+	echo '\n'
 	read -p "Press Enter to continue…"
 
 	# Commit these changes if user confirms
