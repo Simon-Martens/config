@@ -15,13 +15,11 @@
 
 
 ############################## PREP
-mkdir -p ~/source
-cd ~/scripts
+./prereq.sh
 ./uninstall-snapd.sh
 ./install-flatpak.sh
 
 ############################## LANGUAGES 
-./install-go.sh
 cd ~/scripts
 ./install-rust.sh
 cd ~/scripts
