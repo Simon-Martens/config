@@ -7,15 +7,14 @@ clipboard-read = allow
 clipboard-write = allow
 confirm-close-surface = false
 theme = "Dark Modern"
-window-save-state = always
 copy-on-select = true
 
 # Font settings
-font-family = "UbuntuMono"
+font-family = "GeistMono Nerd Font"
 font-size = 14.0
 font-feature = -calt # Disables programming font ligatures as they look ugly af
-adjust-cell-height = 2
-adjust-cell-width = 3%
+adjust-cell-height = 1%
+# adjust-cell-width = 3%
 
 # Keybindings
 keybind = ctrl+shift+f=toggle_fullscreen
