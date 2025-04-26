@@ -29,9 +29,15 @@ cd ~/scripts
 
 ############################# TOOLS
 cd ~/scripts
+./setup-tmux.sh
+cd ~/scripts
 ./install-firefox.sh
 cd ~/scripts
 ./install-neovim.sh
+cd ~/scripts
+./install-ghostty.sh
+cd ~/scripts
+./install-zoxide.sh
 cd ~/scripts
 ./install-gnome-extensions.sh
 cd ~/scripts
@@ -43,17 +49,11 @@ cd ~/scripts
 cd ~/scripts
 ./install-brightness-controller.sh
 cd ~/scripts
-./install-zoxide.sh
-cd ~/scripts
-./install-flatpak.sh
-cd ~/scripts
 ./install-docker.sh
 
 ############################ SETUP
 cd ~
 source ~/.bashrc
 fc-cache -f # Refresh font cache
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # Install tmux plugin manager
 sudo timedatectl set-local-rtc 1 --adjust-system-clock # Avoid time issues with dual-boot setups
-dconf load / < ~/scripts/dconf-settings.ini
 

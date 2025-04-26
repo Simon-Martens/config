@@ -24,6 +24,7 @@
 
 !.config/
 .config/*
+!.config/atuin/
 !.config/kitty/
 !.config/ghostty/
 !.config/Code/
