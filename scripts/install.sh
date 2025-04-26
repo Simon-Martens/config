@@ -50,6 +50,8 @@ cd ~/scripts
 ./install-brightness-controller.sh
 cd ~/scripts
 ./install-docker.sh
+cd ~/scripts
+./install-code.sh
 
 ############################ SETUP
 cd ~
