@@ -344,3 +344,7 @@ function rename_part() {
 # 	[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 # 	eval "$(atuin init bash --disable-up-arrow)"
 # fi
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
