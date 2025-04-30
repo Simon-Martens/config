@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -Syu firefox gnome-extra gnome-tweaks gnome-control-center gdm gnome-shell gnome-backgrounds gnome-settings-daemon gnome-session gnome-terminal gnome-system-monitor gnome-disk-utility gnome-calculator gnome-characters gnome-contacts gnome-font-viewer gnome-logs gnome-menus gnome-screenshot gnome-shell-extensions gnome-themes-extra gvfs gvfs-mtp gvfs-nfs gvfs-smb nautilus networkmanager xdg-user-dirs xdg-utils gnome-power-manager git zoxide bluez bluez-utils pipewire pipewire-pulse pipewire-alsa wireplumber python-pipx wl-clipboard ffmpeg gstreamer gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav gstreamer-vaapi base-devel cmake ninja curl tmux jq gtk4 libadwaita blueprint-compiler gettext
+sudo pacman -Syu firefox gnome-extra gnome-tweaks gnome-control-center gdm gnome-shell gnome-backgrounds gnome-settings-daemon gnome-session gnome-terminal gnome-system-monitor gnome-disk-utility gnome-calculator gnome-characters gnome-contacts gnome-font-viewer gnome-logs gnome-menus gnome-screenshot gnome-shell-extensions gnome-themes-extra gvfs gvfs-mtp gvfs-nfs gvfs-smb nautilus networkmanager xdg-user-dirs xdg-utils gnome-power-manager git zoxide bluez bluez-utils pipewire pipewire-pulse pipewire-alsa wireplumber python-pipx wl-clipboard ffmpeg gstreamer gst-plugins-good gst-plugins-bad gst-plugins-ugly gst-libav gstreamer-vaapi base-devel cmake ninja curl tmux jq gtk4 libadwaita blueprint-compiler gettext power-profiles-daemon
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 gsettings set org.gnome.shell disable-user-extensions false
 sudo systemctl enable --now bluetooth.service
@@ -12,3 +12,4 @@ git clone https://aur.archlinux.org/widevine.git
 cd widevine
 makepkg -si
 
+sudo systemctl enable --now power-profiles-daemon
