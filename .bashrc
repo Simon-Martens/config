@@ -85,6 +85,9 @@ alias dnote='dstask note'
 alias dstop='dstask stop'
 alias drm='dstask remove'
 
+# installing packages on arch
+alias i='sudo pacman -Syu'
+
 # git do it faster
 function g() {
 		git add .
