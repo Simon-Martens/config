@@ -8,4 +8,4 @@ if [ -d "$HOME/.cargo" ]; then
     . "$HOME/.cargo/env"
 fi
 
-cargo install --locked bat
+# cargo install --locked bat

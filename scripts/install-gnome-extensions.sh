@@ -7,9 +7,9 @@ gext install dash-to-panel@jderose9.github.com
 gext install BingWallpaper@ineffable-gmail.com
 # gext install tophat@fflewddur.github.io
 gext install quick-settings-tweaks@qwreey
-gext install clipboard-indicator@tudmontu.com
 gext install burn-my-windows@schneegans.github.com
-gext install places-menu@gnome-shell-extensions.gcamapx.github.com
+gext install runcat@kolesnikov.se
+gext install text-clock@benica.dev
 
 # We need to install the Gesture improvement extensions from github if needed:
 # https://github.com/jamespo/gnome-extensions/releases/tag/gnome46

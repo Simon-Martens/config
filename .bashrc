@@ -341,12 +341,34 @@ function rename_part() {
   fi
 }
 
+function n() {
+    if [ -z "$1" ]; then
+        echo "Usage: n <session_name>"
+        return 1
+    fi
+
+    if [ -n "$TMUX" ]; then
+        tmux has-session -t "$1" 2>/dev/null
+        if [ $? != 0 ]; then
+            tmux new-session -d -s "$1"
+        fi
+        tmux switch-client -t "$1"
+    else
+        echo "Not inside tmux."
+        return 1
+    fi
+}
+
 # if [ -d "$HOME/.atuin/bin" ]; then
 # 	. "$HOME/.atuin/bin/env"
 #
 # 	[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 # 	eval "$(atuin init bash --disable-up-arrow)"
 # fi
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
