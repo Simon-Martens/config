@@ -21,4 +21,4 @@ keybind = ctrl+shift+f=toggle_fullscreen
 keybind = ctrl+shift+d=toggle_window_decorations
 
 # Startup command
-command = bash -c "~/scripts/tmux-startup.sh"
+# command = bash -c "~/scripts/tmux-startup.sh"

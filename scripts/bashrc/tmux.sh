@@ -27,3 +27,7 @@ function n() {
     fi
 }
 
+if [ -d "$HOME/.tmux/plugins/tmux-session-wizard-rewired/bin" ]; then
+		export PATH="$HOME/.tmux/plugins/tmux-session-wizard-rewired/bin:$PATH"
+fi
+
