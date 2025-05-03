@@ -41,7 +41,7 @@
 !.config/rofi/
 !.config/nvim/
 !.config/hypr/
-.config/hypr/hyprland.config
+.config/hypr/hyprland.conf
 !.config/waybar/
 !.config/zellij/
 !.fonts/
