@@ -11,7 +11,7 @@ copy-on-select = true
 
 # Font settings
 font-family = "GeistMono Nerd Font"
-font-size = 12.0
+font-size = 14.0
 # font-feature = -calt, -liga, -dlig # Disables programming font ligatures as they look ugly af
 # adjust-cell-height = 1%
 # adjust-cell-width = 3%

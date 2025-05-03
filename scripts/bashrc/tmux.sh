@@ -27,7 +27,9 @@ function n() {
     fi
 }
 
-if [ -d "$HOME/.tmux/plugins/tmux-session-wizard-rewired/bin" ]; then
+if [ -d "$HOME/source/tmux-session-wizard-rewired/bin" ]; then
+		export PATH="$HOME/source/tmux-session-wizard-rewired/bin:$PATH"
+elif [ -d "$HOME/.tmux/plugins/tmux-session-wizard-rewired/bin" ]; then
 		export PATH="$HOME/.tmux/plugins/tmux-session-wizard-rewired/bin:$PATH"
 fi
 
