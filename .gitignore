@@ -28,6 +28,7 @@
 !.config/atuin/
 !.config/kitty/
 !.config/ghostty/
+.config/ghostty/config
 !.config/Code/
 .config/Code/*
 !.config/Code/User
@@ -40,6 +41,7 @@
 !.config/rofi/
 !.config/nvim/
 !.config/hypr/
+.config/hypr/hyprland.config
 !.config/waybar/
 !.config/zellij/
 !.fonts/
