@@ -1,0 +1,9 @@
+/*
+!.gitignore
+!hypr/
+!alacritty/
+!nvim/
+!zsh/
+!tmux/
+!ghostty/
+!waybar/
