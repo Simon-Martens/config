@@ -15,7 +15,7 @@
 
 #workspaces {
   border-radius: 5px;
-  margin: 5px;
+  margin: 2px;
   background: #101010;
   margin-left: 1rem;
 }
@@ -32,7 +32,7 @@
 }
 
 #workspaces button:hover {
-  color: #85c1dc;
+  color: #99d1db;
   border-radius: 5px;
 }
 
@@ -95,6 +95,11 @@
 }
 
 #custom-lock {
+  border-radius: 5px 0px 0px 5px;
+  color: #babbf1;
+}
+
+#custom-bluetooth {
   border-radius: 5px 0px 0px 5px;
   color: #babbf1;
 }
