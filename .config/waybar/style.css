@@ -43,8 +43,8 @@
 #battery,
 #pulseaudio,
 #network,
-#cpu,
 #memory,
+#custom-bluetooth,
 #custom-lock,
 #custom-power {
   background-color: #101010;
@@ -54,6 +54,22 @@
 
 #memory {
   border-radius: 0px 5px 5px 0px;
+}
+
+#cpu {
+  padding: 0.5rem 0rem;
+  padding-right: 1rem;
+  margin: 5px 0;
+  background-color: #101010;
+}
+
+#custom-polycat {
+  background-color: #101010;
+  padding: 0rem 1rem;
+  margin: 5px 0;
+  font-family: polycat;
+  color: #ffffff;
+  font-size: 16px;
 }
 
 #clock {

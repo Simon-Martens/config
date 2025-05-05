@@ -8,8 +8,9 @@
     "backlight",
     "battery",
     "network",
-    "cpu",
     "memory",
+		"custom/polycat",
+		"cpu",
     "tray",
 		"custom/bluetooth",
     "custom/lock"
@@ -48,7 +49,7 @@
   },
   "cpu": {
     "interval": 1,
-    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+    "format": "{usage:>2}%",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
   },
   "memory": {
@@ -72,7 +73,12 @@
     "tooltip": false,
     "on-click": "sh -c '(sleep 0.5s; hyprlock --immediate)' & disown",
     "format": ""
-  }
+  },
+  "custom/polycat": {
+		"exec": "polycat || echo ' '",
+		"return-type": "text",
+		"tooltip": false
+	}
   // "custom/power": {
   //   "tooltip": false,
   //   "on-click": "shutdown 0 &",
