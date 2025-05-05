@@ -65,7 +65,8 @@
 
 #custom-polycat {
   background-color: #101010;
-  padding: 0rem 1rem;
+  padding: 0rem 0rem;
+  padding-left: 1rem;
   margin: 5px 0;
   font-family: polycat;
   color: #ffffff;
@@ -111,6 +112,7 @@
 }
 
 #custom-lock {
+  margin-right: 1rem;
   border-radius: 5px 0px 0px 5px;
   color: #babbf1;
 }
