@@ -2,10 +2,6 @@
 
 # Install rustup -- Interactive
 cd ~/Downloads
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
 
-if [ -d "$HOME/.cargo" ]; then
-    . "$HOME/.cargo/env"
-fi
-
-# cargo install --locked bat
+source ~/.bashrc

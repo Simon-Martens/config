@@ -40,7 +40,7 @@ source ~/.bashrc
 cd ~
 git clone git@github.com:Simon-Martens/tasks.git ./.dstask
 
-pacaman -S --noconfirm nerd-fonts
+sudo pacman -S --noconfirm nerd-fonts
 yay -S --needed --noconfirm \
 ttf-google-fonts-git ttf-ms-fonts ttf-mononoki ttf-iosevka ttf-iosevka-term \
 ttf-material-design-icons ttf-font-awesome ttf-weather-icons \
