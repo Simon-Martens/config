@@ -47,3 +47,8 @@ ttf-material-design-icons ttf-font-awesome ttf-weather-icons \
 ttf-ubuntu-font-family ttf-hack ttf-clear-sans ttf-roboto ttf-roboto-mono \
 ttf-opensans ttf-lato ttf-merriweather ttf-pt-sans ttf-pt-serif \
 nerd-fonts-complete
+
+cd ~/scripts
+sudo cp -f misc/ssh-agent.service /etc/systemd/user/
+systemctl --user enable ssh-agent.service
+systemctl --user start ssh-agent.service
