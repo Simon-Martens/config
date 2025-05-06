@@ -8,6 +8,8 @@ clipboard-write = allow
 confirm-close-surface = false
 theme = "Dark Modern"
 copy-on-select = true
+window-padding-x = 8
+window-padding-y = 6
 
 # Font settings
 font-family = "GeistMono Nerd Font"
