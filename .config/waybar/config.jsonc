@@ -78,7 +78,7 @@
     "format": ""
   },
   "custom/polycat": {
-		"exec": "polycat || echo ' '",
+		"exec": "bash -c polycat || echo ' '",
 		"return-type": "text",
 		"tooltip": false
 	}
