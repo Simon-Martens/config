@@ -52,3 +52,4 @@ cd ~/scripts
 sudo cp -f misc/ssh-agent.service /etc/systemd/user/
 systemctl --user enable ssh-agent.service
 systemctl --user start ssh-agent.service
+systemctl --user enable --now gcr-ssh-agent.socket
