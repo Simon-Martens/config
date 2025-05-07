@@ -48,10 +48,11 @@
     "max-length": 50
   },
   "clock": {
+		"interval": 1,
     "timezone": "Europe/Berlin",
-		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"tooltip-format": "{:%d.%m.%Y | %H:%M:%S}",
     //"format": "{:%d.%m. %H:%M}"
-		"format": "{:%A}",
+		"format": "{:%A | %H:%M}",
   },
 	"battery": {
     "interval": 20,
