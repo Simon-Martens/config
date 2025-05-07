@@ -6,10 +6,11 @@ cursor-style = "bar"
 clipboard-read = allow
 clipboard-write = allow
 confirm-close-surface = false
-theme = "Dark Modern"
+theme = "DimmedMonokai"
 copy-on-select = true
 window-padding-x = 8
 window-padding-y = 6
+# background-opacity = 0.98
 
 # Font settings
 font-family = "GeistMono Nerd Font"

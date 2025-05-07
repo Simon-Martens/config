@@ -44,7 +44,7 @@
 #pulseaudio,
 #network,
 #memory,
-#custom-bluetooth,
+#bluetooth,
 #custom-lock,
 #custom-power {
   background-color: #101010;
@@ -71,6 +71,10 @@
   font-family: polycat;
   color: #ffffff;
   font-size: 16px;
+}
+
+#hyprland-window {
+  padding-left: 10rem;
 }
 
 #clock {
@@ -117,7 +121,7 @@
   color: #babbf1;
 }
 
-#custom-bluetooth {
+#bluetooth {
   border-radius: 5px 0px 0px 5px;
   color: #babbf1;
 }
