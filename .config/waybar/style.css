@@ -30,7 +30,7 @@
   border-radius: 5px;
 }
 
-#workspaces button:hover {
+#workspaces button.hover {
   background-color: #157c94;
   color: #ffffff;
   border-radius: 5px;
@@ -80,7 +80,7 @@
 }
 
 #clock {
-  color: #8caaee;
+  color: #babbf1;
   border-radius: 5px;
   margin-right: 1rem;
 }
