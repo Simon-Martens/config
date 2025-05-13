@@ -3,8 +3,8 @@
   "position": "top",
 	"mode": "dock",
 	"start_hidden": false,
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-center": ["clock"],
+  "modules-left": [ "hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock", "custom/tmux"],
   "modules-right": [
     "pulseaudio",
 		"backlight",
@@ -15,7 +15,6 @@
 		"cpu",
 		"bluetooth",
     "tray",
-		"custom/tmux",
     "custom/lock"
   ],
 	"backlight": {

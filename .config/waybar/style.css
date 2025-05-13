@@ -46,7 +46,6 @@
 #network,
 #memory,
 #bluetooth,
-#custom-tmux,
 #custom-lock,
 #custom-power {
   background-color: #101010;
@@ -55,7 +54,10 @@
 }
 
 #custom-tmux {
-  color: #babbf1;
+  color: #00a000;
+  background-color: #101010;
+  padding: 0rem 1rem;
+  margin: 5px 0;
 }
 
 #memory {
