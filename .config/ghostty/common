@@ -22,6 +22,7 @@ font-size = 14.0
 # Keybindings
 keybind = ctrl+shift+f=toggle_fullscreen
 keybind = ctrl+shift+d=toggle_window_decorations
+keybind = ctrl+t=text:t\n
 
 # Startup command
 # command = bash -c "~/scripts/tmux-startup.sh"

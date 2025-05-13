@@ -15,6 +15,7 @@
 		"cpu",
 		"bluetooth",
     "tray",
+		"custom/tmux",
     "custom/lock"
   ],
 	"backlight": {
@@ -111,6 +112,15 @@
 		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
 		"on-click": "blueman-manager"
+	},
+	"custom/tmux": {
+		"exec": "tmux ls 2>/dev/null | wc -l | grep -x '[1-9][0-9]*'",
+		"exec-if": "bash -c type tmux",
+		"hide-empty-text": true,
+		"return-type": "text",
+		"interval": 2,
+		"tooltip": false,
+		"format": "  {text}"
 	},
   "custom/lock": {
     "tooltip": false,
