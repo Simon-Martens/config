@@ -113,7 +113,7 @@
 		"on-click": "blueman-manager"
 	},
 	"custom/tmux": {
-		"exec": "bash -c 'list=$(tmux ls 2>/dev/null | tr \"\\n\" \"\\r\"); lo=$(tmux ls 2>/dev/null); count=$(echo \"$lo\" | wc -l | grep -x \"[1-9][0-9]*\"); [ -n \"$count\" ] && echo \"$count\" && echo \"$list\"'",
+		"exec": "bash -c 'list=$(tmux ls 2>/dev/null | tr \"\\n\" \"\\r\"); lo=$(tmux ls 2>/dev/null); [ -n \"$lo\" ] && count=$(echo \"$lo\" | wc -l | grep -x \"[1-9][0-9]*\") && echo \"$count\" && echo \"$list\"'",
 		"exec-if": "bash -c type tmux",
 		"hide-empty-text": true,
 		"return-type": "text",
