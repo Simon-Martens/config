@@ -28,7 +28,9 @@
     "format-icons": {
       "active": "",
       "default": ""
-    }
+    },
+		"on-scroll-up": "hyprctl dispatch workspace r-1",
+		"on-scroll-down": "hyprctl dispatch workspace r+1"
   },
 	"hyprland/window": {
 		"format": "{title}",
@@ -40,7 +42,9 @@
 				"(.*~.*)": "󰅬  $1"
 		},
     "tooltip": false,
-		"separate-outputs": true
+		"separate-outputs": true,
+		"on-scroll-up": "hyprctl dispatch workspace r-1",
+		"on-scroll-down": "hyprctl dispatch workspace r+1"
 	},
   "tray": {
     "icon-size": 21,

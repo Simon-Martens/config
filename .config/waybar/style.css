@@ -30,12 +30,6 @@
   border-radius: 5px;
 }
 
-#workspaces button.hover {
-  background-color: #157c94;
-  color: #ffffff;
-  border-radius: 5px;
-}
-
 #custom-music,
 #tray,
 #backlight,
@@ -84,6 +78,7 @@
 #window {
   color: #babbf1;
   padding-left: 1rem;
+  min-width: 32rem;
 }
 
 #clock {
