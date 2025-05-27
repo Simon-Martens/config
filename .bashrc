@@ -7,7 +7,7 @@
 # Instead, edit the individual .sh files in /home/simon/scripts/bashrc          
 # and then re-run the generation script.                                        
 #                                                                               
-# Generated on: 2025-05-27 20:35:39 CEST                                    
+# Generated on: 2025-05-27 20:59:40 CEST                                    
 # ==============================================================================
 
 
@@ -343,6 +343,7 @@ function rename_part() {
 #!/usr/bin/env bash
 
 export BASH_ENV="~/.bash_env"
+export TERMINAL="ghostty"
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -549,4 +550,4 @@ eval "$(zoxide init bash)"
 # Tip: Source this file in your interactive shell sessions or ensure it's
 # automatically sourced by your shell's main configuration (e.g., .bash_profile).
 
-export BASHRC_GENERATED_ON="2025-05-27 20:35:39 CEST"
+export BASHRC_GENERATED_ON="2025-05-27 20:59:40 CEST"
