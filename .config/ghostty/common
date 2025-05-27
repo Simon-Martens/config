@@ -14,7 +14,7 @@ window-padding-y = 6
 
 # Font settings
 font-family = "GeistMono Nerd Font"
-font-size = 14.0
+font-size = 13.0
 # font-feature = -calt, -liga, -dlig # Disables programming font ligatures as they look ugly af
 # adjust-cell-height = 1%
 # adjust-cell-width = 3%
