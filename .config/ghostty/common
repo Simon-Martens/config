@@ -1,6 +1,5 @@
 # General
 mouse-hide-while-typing = true
-shell-integration = bash
 cursor-style-blink = true
 cursor-style = "bar"
 clipboard-read = allow

@@ -1,5 +1,6 @@
 alias ll='ls -salh --color=auto --hyperlink=auto'
-alias c='clear'
+alias ls='ls -salh --color=tty --hyperlink=always'
+
 alias s='sudo'
 alias h='history'
 
