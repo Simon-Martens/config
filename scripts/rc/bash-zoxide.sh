@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # shellcheck shell=bash
 
 # =============================================================================
@@ -42,6 +40,26 @@ if [[ ${PROMPT_COMMAND:=} != *'__zoxide_hook'* ]]; then
     PROMPT_COMMAND="__zoxide_hook;${PROMPT_COMMAND#;}"
 fi
 
+# Report common issues.
+function __zoxide_doctor() {
+    [[ ${_ZO_DOCTOR:-1} -eq 0 ]] && return 0
+    # shellcheck disable=SC2199
+    [[ ${PROMPT_COMMAND[@]:-} == *'__zoxide_hook'* ]] && return 0
+    # shellcheck disable=SC2199
+    [[ ${__vsc_original_prompt_command[@]:-} == *'__zoxide_hook'* ]] && return 0
+
+    _ZO_DOCTOR=0
+    \builtin printf '%s\n' \
+        'zoxide: detected a possible configuration issue.' \
+        'Please ensure that zoxide is initialized right at the end of your shell configuration file (usually ~/.bashrc).' \
+        '' \
+        'If the issue persists, consider filing an issue at:' \
+        'https://github.com/ajeetdsouza/zoxide/issues' \
+        '' \
+        'Disable this message by setting _ZO_DOCTOR=0.' \
+        '' >&2
+}
+
 # =============================================================================
 #
 # When using zoxide with --no-cmd, alias these internal functions as desired.
@@ -51,6 +69,8 @@ __zoxide_z_prefix='z#'
 
 # Jump to a directory using only keywords.
 function __zoxide_z() {
+    __zoxide_doctor
+
     # shellcheck disable=SC2199
     if [[ $# -eq 0 ]]; then
         __zoxide_cd ~
@@ -74,6 +94,7 @@ function __zoxide_z() {
 
 # Jump to a directory using interactive search.
 function __zoxide_zi() {
+    __zoxide_doctor
     \builtin local result
     result="$(\command zoxide query --interactive -- "$@")" && __zoxide_cd "${result}"
 }
@@ -100,8 +121,13 @@ function zi() {
 # - Completions don't work on `dumb` terminals.
 if [[ ${BASH_VERSINFO[0]:-0} -eq 4 && ${BASH_VERSINFO[1]:-0} -ge 4 || ${BASH_VERSINFO[0]:-0} -ge 5 ]] &&
     [[ :"${SHELLOPTS}": =~ :(vi|emacs): && ${TERM} != 'dumb' ]]; then
-    # Use `printf '\e[5n'` to redraw line after fzf closes.
-    \builtin bind '"\e[0n": redraw-current-line' &>/dev/null
+
+    function __zoxide_z_complete_helper() {
+        READLINE_LINE="z ${__zoxide_result@Q}"
+        READLINE_POINT=${#READLINE_LINE}
+        bind '"\e[0n": accept-line'
+        \builtin printf '\e[5n' >/dev/tty
+    }
 
     function __zoxide_z_complete() {
         # Only show completions when the cursor is at the end of the line.
@@ -113,12 +139,20 @@ if [[ ${BASH_VERSINFO[0]:-0} -eq 4 && ${BASH_VERSINFO[1]:-0} -ge 4 || ${BASH_VER
                 \builtin compgen -A directory -- "${COMP_WORDS[-1]}" || \builtin true
             )
         # If there is a space after the last word, use interactive selection.
-        elif [[ -z ${COMP_WORDS[-1]} ]] && [[ ${COMP_WORDS[-2]} != "${__zoxide_z_prefix}"?* ]]; then
-            \builtin local result
+        elif [[ -z ${COMP_WORDS[-1]} ]]; then
             # shellcheck disable=SC2312
-            result="$(\command zoxide query --exclude "$(__zoxide_pwd)" --interactive -- "${COMP_WORDS[@]:1:${#COMP_WORDS[@]}-2}")" &&
-                COMPREPLY=("${__zoxide_z_prefix}${result}/")
-            \builtin printf '\e[5n'
+            __zoxide_result="$(\command zoxide query --exclude "$(__zoxide_pwd)" --interactive -- "${COMP_WORDS[@]:1:${#COMP_WORDS[@]}-2}")" && {
+                # In case the terminal does not respond to \e[5n or another
+                # mechanism steals the response, it is still worth completing
+                # the directory in the command line.
+                COMPREPLY=("${__zoxide_z_prefix}${__zoxide_result}/")
+
+                # Note: We here call "bind" without prefixing "\builtin" to be
+                # compatible with frameworks like ble.sh, which emulates Bash's
+                # builtin "bind".
+                bind -x '"\e[0n": __zoxide_z_complete_helper'
+                \builtin printf '\e[5n' >/dev/tty
+            }
         fi
     }
 
@@ -126,4 +160,8 @@ if [[ ${BASH_VERSINFO[0]:-0} -eq 4 && ${BASH_VERSINFO[1]:-0} -ge 4 || ${BASH_VER
     \builtin complete -r zi &>/dev/null || \builtin true
 fi
 
-eval "$(zoxide init bash)"
+# =============================================================================
+#
+# To initialize zoxide, add this to your shell configuration file (usually ~/.bashrc):
+#
+# eval "$(zoxide init bash)"

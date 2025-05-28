@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # This allows you to change a part of a filename to another part.
 function rename_part() {
   # First parse optional flags

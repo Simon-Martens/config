@@ -1,5 +1,3 @@
-#!/bin/bash
-
 if [ -d "$HOME/.atuin/bin" ]; then
 	. "$HOME/.atuin/bin/env"
 

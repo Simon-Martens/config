@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # COLOR SETTINGS
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window

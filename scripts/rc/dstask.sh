@@ -1,18 +1,5 @@
-#!/bin/bash
-
-alias ll='ls -salh --color=auto --hyperlink=auto'
-alias c='clear'
-alias s='sudo'
-alias h='history'
-
-# installing packages on arch
-alias i='sudo pacman -Syu'
-
-# removal protection
-alias rm='rm -I'
-
 # dstask aliases
-alias d='dstask'
+alias d='dstask next'
 alias da='dstask add'
 alias ds='dstask start'
 alias dd='dstask done'

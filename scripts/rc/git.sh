@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # commit faster
 function g() {
 		git add .

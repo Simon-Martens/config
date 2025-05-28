@@ -1,5 +1,3 @@
-#!/bin/bash
-
 function n() {
     if [ -z "$1" ]; then
         echo "Usage: n <session_name|directory>"

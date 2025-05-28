@@ -1,9 +1,5 @@
-#!/bin/bash
-
-alias e='nvim'
-alias vim='nvim'
-alias v='nvim'
-
+export TERMINAL="ghostty"
 export MANPAGER='nvim +Man!'
+export PAGER='nvim +%s'
 export EDITOR="nvim"
 export VISUAL="nvim"

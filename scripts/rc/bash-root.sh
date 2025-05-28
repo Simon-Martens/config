@@ -1,7 +1,4 @@
-#!/usr/bin/env bash
-
 export BASH_ENV="~/.bash_env"
-export TERMINAL="ghostty"
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
