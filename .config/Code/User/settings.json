@@ -17,5 +17,6 @@
     "git.openRepositoryInParentFolders": "always",
     "sqltools.useNodeRuntime": true,
     "xml.server.vmargs": "-Xmx256M",
-    "xml.symbols.maxItemsComputed": 20000
+    "xml.symbols.maxItemsComputed": 20000,
+    "explorer.confirmDelete": false
 }
