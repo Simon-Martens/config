@@ -1,7 +1,10 @@
 [user]
 	name = Simon Martens
 	email = simon.martens@mailbox.org
+	signingkey = 61F5BD22CF3388F9
 [pull]
 	rebase = false
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true
