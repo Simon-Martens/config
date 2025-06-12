@@ -2,7 +2,7 @@
     "frames": "",
     "highRate": 30,
     "lowRate": 2,
-    "pollingPeriod": 1000,
+    "pollingPeriod": 3000,
     "smoothEnabled": true,
     "smoothValue": 2000,
     "sleepEnabled": true,
