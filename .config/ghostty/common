@@ -9,6 +9,7 @@ theme = "DimmedMonokai"
 copy-on-select = true
 window-padding-x = 8
 window-padding-y = 6
+window-decoration = none
 # background-opacity = 0.98
 
 # Font settings

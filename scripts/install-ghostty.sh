@@ -9,7 +9,7 @@ cd ghostty
 git pull
 
 # Install dependencies, change if neccessary
-sudo apt install libgtk-4-dev libadwaita-1-dev git blueprint-compiler
+# sudo apt install libgtk-4-dev libadwaita-1-dev git blueprint-compiler
 
 # Requires zig (as of now .13)
 zig build -Doptimize=ReleaseFast
